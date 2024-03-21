@@ -23,13 +23,13 @@ const LandingPage = () => {
                             <div className="hidden md:block">
                                 <a
                                     href="#"
-                                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 hover:underline"
+                                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
                                 >
                                     Home
                                 </a>
                                 <a
                                     href="#"
-                                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 hover:underline"
+                                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
                                 >
                                     Login
                                 </a>
@@ -93,8 +93,9 @@ const LandingPage = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}>
-                <p>Welcome to EZDues</p>
-                <div className=" flex gap-x-2" >
+                <img src={images.homeBg} alt="Centered Image" className="absolute inset-0 m-auto max-w-2/3 h-auto" />
+                <p className="absolute inset-x-0 bottom-20 text-black text-center">  The hassle-free path to your <br className="md:hidden" /> No Dues Certificate</p>
+                <div className="absolute inset-x-0 bottom-10 flex justify-center gap-x-2">
                     <Link to={"/student/sign-in"}>
                         <Button>Log in As Student</Button>
                     </Link>
