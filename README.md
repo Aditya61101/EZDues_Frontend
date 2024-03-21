@@ -11,4 +11,5 @@ This template provides a minimal setup to get React working in Vite with HMR and
 3. `npm run dev`
 
 ## Install Components
+
 Documentation to add components to your pages like [buttons](https://ui.shadcn.com/docs/components/button), cards, alert dialog, etc.
