@@ -1,0 +1,95 @@
+::selection {
+  background-color: rgb(163, 203, 255);
+  color: rgb(0, 0, 95);
+}
+
+.heading {
+  line-height: 1.2;
+}
+.largest {
+  font-size: clamp(3rem, 5vw, 6rem);
+  font-weight: 500;
+  color: #555c76;
+  width: 100%;
+  width: max-content;
+}
+.middle {
+  font-size: clamp(1.2rem, 2.5vw, 3rem);
+  font-weight: 700;
+  font-style: italic;
+  color: #555c76;
+  width: max-content;
+  padding-left: 7em;
+}
+.largest.bottom {
+  padding-left: 6ch;
+}
+.subheading {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  width: min(30vw, 900px);
+  text-align: center;
+  line-height: 1.2;
+}
+section {
+  min-height: 50vh;
+}
+.card {
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 270px;
+  height: 250px;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.199);
+  margin: 1rem;
+  margin-top: 7rem;
+  color: #142151;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  background-color: #538ff8;
+  /* border: 2px solid white; */
+  /* padding: 1rem; */
+  display: grid;
+  place-content: center;
+  height: 2.5ch;
+  width: 2.6ch;
+  border-radius: 50%;
+}
+Button {
+  transition: 0.5s !important;
+}
+Button:hover {
+  transform: translateY(-10px);
+}
+Button.secondary:hover {
+  background-color: #538ff8 !important;
+  color: white !important;
+}
+
+@media (max-width: 500px) {
+  .heading {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .middle {
+    padding-left: 0;
+  }
+  .largest.bottom {
+    padding-left: 0;
+  }
+  .subheading {
+    width: 70vw;
+  }
+}
