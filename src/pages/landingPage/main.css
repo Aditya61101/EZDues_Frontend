@@ -57,14 +57,19 @@
   display: grid;
   place-content: center;
   height: 2.5ch;
-  width: 2.6ch;
+  width: 2.5ch;
   border-radius: 50%;
+  /* background-color: #89b4ff; */
 }
 Button {
   transition: 0.5s !important;
 }
 Button:hover {
   transform: translateY(-10px);
+}
+section {
+  padding-top: 7rem !important;
+  padding-bottom: 10rem !important;
 }
 @media (max-width: 500px) {
   .heading {
