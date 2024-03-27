@@ -36,7 +36,7 @@ const LandingPage = () => {
                     loading="lazy"
                     src={images.logo}
                     alt="logo"
-                    className="h-6"
+                    className="h-4"
                   />
                 </div>
               </div>
@@ -67,7 +67,7 @@ const LandingPage = () => {
             The Hassle-Free Path to your No Dues Certificate
           </div>
           <Link to={"/student/sign-in"}>
-            <Button className=" bg-[#538ff8] hover:bg-[#4985eb] px-7 lg:px-14 lg:py-7 lg:text-2xl my-12 mt-7">
+            <Button className=" bg-[#538ff8] hover:bg-[#4985eb] px-7 lg:px-14 lg:py-7 lg:text-xl my-12 mt-7">
               Login
             </Button>
           </Link>
