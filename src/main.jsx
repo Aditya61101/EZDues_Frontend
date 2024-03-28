@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 //Layouts
 import { StudentLayout } from "./layouts/student-layout.jsx";
 import { AdminLayout } from "./layouts/admin-layout";
+import { DepartmentLayout } from "./layouts/department-layout";
 //LandingPage
 import LandingPage from "./pages/landingPage/index.jsx";
 //Student-pages
@@ -14,6 +15,13 @@ import StudentProfile from "./pages/student/profile-page.jsx";
 //Admin-pages
 import AdminHome from "./pages/admin/home";
 import AdminLogin from "./pages/admin/sign-in";
+//Department Pages
+import DepartmentDashboard from "./pages/department/dashboard";
+import NoDuesRequests from "./pages/department/no-dues-requests";
+import PaidFines from "./pages/department/approve-paid";
+import SearchStudent from "./pages/department/search-student";
+import NewFine from "./pages/department/new-fine";
+import StudentDetail from "./pages/department/student-detail";
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -30,6 +38,17 @@ const router = createBrowserRouter([
     children: [
       { path: "/admin", element: <AdminHome /> },
       { path: "/admin/sign-in", element: <AdminLogin /> },
+    ],
+  },
+  {
+    element: <DepartmentLayout />,
+    children: [
+      { path: "/department/", element: <DepartmentDashboard /> },
+      { path: "/department/nodues/", element: <NoDuesRequests /> },
+      { path: "/department/paidfines/", element: <PaidFines /> },
+      { path: "/department/search/", element: <SearchStudent /> },
+      { path: "/department/new/", element: <NewFine /> },
+      { path: "/department/student/:studentID", element: <StudentDetail /> },
     ],
   },
 ]);
