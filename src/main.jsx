@@ -44,8 +44,8 @@ const router = createBrowserRouter([
     element: <DepartmentLayout />,
     children: [
       { path: "/department/", element: <DepartmentDashboard /> },
-      { path: "/department/nodues/", element: <NoDuesRequests /> },
       { path: "/department/paidfines/", element: <PaidFines /> },
+      { path: "/department/nodues/", element: <NoDuesRequests /> },
       { path: "/department/search/", element: <SearchStudent /> },
       { path: "/department/new/", element: <NewFine /> },
       { path: "/department/student/:studentID", element: <StudentDetail /> },

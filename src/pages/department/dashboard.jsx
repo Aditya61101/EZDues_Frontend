@@ -1,9 +1,5 @@
 const DepartmentDashboard = () => {
-  return (
-    <>
-      <p>Dept. Dashboard</p>
-    </>
-  );
+  return <></>;
 };
 
 export default DepartmentDashboard;
