@@ -8,7 +8,7 @@ export const DepartmentLayout = () => {
       <DepartmentNavbar>
         <DepartmentSidebar></DepartmentSidebar>
       </DepartmentNavbar>
-      <div className="main absolute left-80 top-16 p-10 overflow-y-auto">
+      <div className="main md:absolute md:left-80 md:top-16 p-10 overflow-y-auto">
         {" "}
         <Outlet />
       </div>

@@ -8,38 +8,73 @@ import {
   BellPlus,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { images } from "@/constants";
 
 const SidebarContent = () => {
   return (
     <>
       <div className="flex flex-col items-start justify-center gap-5">
-        <Link className="text-md my-5" to={"/department/"}>
+        <NavLink
+          to={"/department/"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-md p-5 bg-slate-200 w-full rounded-md"
+              : "text-md p-5 w-full rounded-md"
+          }
+          end={true}
+        >
           <Home className="inline mx-2" size={20} /> Dashboard
-        </Link>
-        <Link className="text-md my-5" to={"/department/paidfines/"}>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-md p-5 bg-slate-200 w-full rounded-md"
+              : "text-md p-5 w-full rounded-md"
+          }
+          end={true}
+          to={"/department/paidfines/"}
+        >
           <BadgeCheckIcon className="inline mx-2" size={20} /> Approve Paid
           Fines
-        </Link>
-        <Link className="text-md my-5" to={"/department/nodues/"}>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-md p-5 bg-slate-200 w-full rounded-md"
+              : "text-md p-5 w-full rounded-md"
+          }
+          end={true}
+          to={"/department/nodues/"}
+        >
           <FileCheck className="inline mx-2" size={20} /> No Dues Requests
-        </Link>
-        <Link className="text-md my-5" to={"/department/search/"}>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-md p-5 bg-slate-200 w-full rounded-md"
+              : "text-md p-5 w-full rounded-md"
+          }
+          end={true}
+          to={"/department/search/"}
+        >
           <UserSearchIcon className="inline mx-2" size={20} />
           Search Student
-        </Link>
+        </NavLink>
       </div>
       <div className="mb-5 flex flex-col gap-5 text-center">
-        <Link className="text-md my-5 text-[#538ff8]" to={"/department/"}>
+        <NavLink
+          className="text-md p-5 w-full rounded-md text-[#538ff8]"
+          to={"/department/"}
+        >
           <BellPlus className="inline mx-2" size={20} />
           Send Reminder
-        </Link>
-        <Link to="/department/new/">
+        </NavLink>
+        <NavLink to="/department/new/">
           <Button className="bg-[#538ff8] text-lg py-7 px-10 hover:bg-blue-600">
             + New Fine
           </Button>
-        </Link>
+        </NavLink>
       </div>
     </>
   );

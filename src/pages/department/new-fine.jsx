@@ -1,7 +1,7 @@
 const NewFine = () => {
   return (
     <>
-      <p>Student profile page</p>
+      <p>Add New Fine</p>
     </>
   );
 };
