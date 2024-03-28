@@ -14,10 +14,12 @@ import StudentProfile from "./pages/student/profile-page.jsx";
 //Admin-pages
 import AdminHome from "./pages/admin/home";
 import AdminLogin from "./pages/admin/sign-in";
+import LogIn from "./pages/loginPage/LogIn.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
-  {
+  {path:"/login", element: <LogIn/>}
+  ,{
     element: <StudentLayout />,
     children: [
       { path: "/student", element: <StudentHome /> },

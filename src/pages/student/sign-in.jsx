@@ -1,9 +1,9 @@
-const StudentLogin = () => {
-    return (
-        <>
-            <p>Student login page</p>
-        </>
-    )
-};
+const SignIn= ()=>{
+return
+(<>
 
-export default StudentLogin;
+</>
+
+);
+}
+export default SignIn;
