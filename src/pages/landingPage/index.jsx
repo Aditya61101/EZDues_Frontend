@@ -37,7 +37,7 @@ const LandingPage = () => {
                                         loading="lazy"
                                         src={images.logo}
                                         alt="logo"
-                                        className="h-4"
+                                        className="h-5"
                                     />
                                 </div>
                             </div>
@@ -45,13 +45,13 @@ const LandingPage = () => {
                                 <div className="hidden md:block">
                                     <Link
                                         to="/"
-                                        className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 mx-4"
+                                        className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 mx-2"
                                     >
                                         Home
                                     </Link>
                                     <Link
                                         to={"/student/sign-in"}
-                                        className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 mx-4"
+                                        className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 mx-2"
                                     >
                                         Login
                                     </Link>
