@@ -129,10 +129,11 @@ const LandingPage = () => {
         <div>
           <img src={images.aboutIllustration} />
         </div>
-       </section>
-       <ScrollToTopButton />
-       <Footer />
-    );
+      </section>
+      <Footer />
+      <ScrollToTopButton />
+    </div>
+  )
 };
 
 export default LandingPage;
