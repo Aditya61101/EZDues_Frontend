@@ -13,7 +13,7 @@ const StudentNavbar = () => {
                     <Link to={"/student/profile"}>
                         <MenubarTrigger>Profile</MenubarTrigger>
                     </Link>
-                    <Link to={"/student/sign-in"}>
+                    <Link to={"/login"}>
                         <MenubarTrigger>Login</MenubarTrigger>
                     </Link>
                 </MenubarMenu>
