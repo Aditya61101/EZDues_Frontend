@@ -32,14 +32,19 @@ const LandingPage = () => {
             <div className="flex justify-between h-16">
               <div className="flex">
                 <div className="flex-shrink-0 flex items-center">
-                  <img loading="lazy" src={images.logo} alt="logo" className="h-6" />
+                  <img
+                    loading="lazy"
+                    src={images.logo}
+                    alt="logo"
+                    className="h-4"
+                  />
                 </div>
               </div>
               <div className="flex items-center">
                 <div className="hidden md:block">
                   <Link
                     to="/"
-                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
+                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 mx-4"
                   >
                     Home
                   </Link>
@@ -58,7 +63,7 @@ const LandingPage = () => {
 
         <div className="main w-full flex justify-center items-center flex-col h-screen mt-[-64px]">
           <HeroHeading />
-          <div className="subheading text-gray-600">
+          <div className="subheading text-gray-600 mt-5">
             The Hassle-Free Path to your No Dues Certificate
           </div>
           <Link to={"/login"}>
@@ -72,19 +77,19 @@ const LandingPage = () => {
         <div className="flex justify-evenly items-center flex-wrap">
           <div className="card">
             <div className="icon">
-              <Globe color="white" fill="#142151" size={80} />
+              <Globe color="#142151" fill="#8ea5fa" size={60} />
             </div>
             Complete Online Process
           </div>
           <div className="card">
             <div className="icon">
-              <Clock color="white" fill="#142151" size={80} />
+              <Clock color="#142151" fill="#8ea5fa" size={60} />
             </div>
             Saves Your Time{" "}
           </div>
           <div className="card">
             <div className="icon">
-              <CheckCheck color="#142151" size={80} />
+              <CheckCheck color="#142151" size={60} />
             </div>
             Auto-Approving Feature
           </div>
@@ -97,7 +102,9 @@ const LandingPage = () => {
         }}
       >
         <div className=" max-w-[500px]">
-          <h1 className="text-[42px] font-medium mb-5 text-center md:text-left">About</h1>
+          <h1 className="text-[42px] font-medium mb-5 text-center md:text-left">
+            About
+          </h1>
           <p className="md:text-lg leading-8 text-[#525971] text-justify">
             EZDues is a "No Dues Portal" which would serve as a centralized
             platform for students to clear any pending dues or obligations to
