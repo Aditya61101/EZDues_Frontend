@@ -6,15 +6,15 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { StudentLayout } from "./layouts/student-layout.jsx";
 import { AdminLayout } from "./layouts/admin-layout";
 import { DepartmentLayout } from "./layouts/department-layout";
+//Login page
+import Login from "./pages/loginPage/Login.jsx";
 //LandingPage
 import LandingPage from "./pages/landingPage/index.jsx";
 //Student-pages
 import StudentHome from "./pages/student/home.jsx";
-import StudentLogin from "./pages/student/sign-in.jsx";
 import StudentProfile from "./pages/student/profile-page.jsx";
 //Admin-pages
 import AdminHome from "./pages/admin/home";
-import AdminLogin from "./pages/admin/sign-in";
 //Department Pages
 import DepartmentDashboard from "./pages/department/dashboard";
 import NoDuesRequests from "./pages/department/no-dues-requests";
@@ -25,29 +25,26 @@ import StudentDetail from "./pages/department/student-detail";
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
+  { path: "/login", element: <Login /> },
   {
     element: <StudentLayout />,
     children: [
       { path: "/student", element: <StudentHome /> },
-      { path: "/student/sign-in", element: <StudentLogin /> },
       { path: "/student/profile", element: <StudentProfile /> },
     ],
   },
   {
     element: <AdminLayout />,
-    children: [
-      { path: "/admin", element: <AdminHome /> },
-      { path: "/admin/sign-in", element: <AdminLogin /> },
-    ],
+    children: [{ path: "/admin", element: <AdminHome /> }],
   },
   {
     element: <DepartmentLayout />,
     children: [
-      { path: "/department/", element: <DepartmentDashboard /> },
-      { path: "/department/paidfines/", element: <PaidFines /> },
-      { path: "/department/nodues/", element: <NoDuesRequests /> },
-      { path: "/department/search/", element: <SearchStudent /> },
-      { path: "/department/new/", element: <NewFine /> },
+      { path: "/department", element: <DepartmentDashboard /> },
+      { path: "/department/paid-fines", element: <PaidFines /> },
+      { path: "/department/no-dues", element: <NoDuesRequests /> },
+      { path: "/department/search", element: <SearchStudent /> },
+      { path: "/department/new", element: <NewFine /> },
       { path: "/department/student/:studentID", element: <StudentDetail /> },
     ],
   },
