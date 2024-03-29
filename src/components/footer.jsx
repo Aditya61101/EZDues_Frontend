@@ -42,7 +42,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="text-white flex flex-col justify-start items-start gap-y-2 md:gap-y-5">
-          <Link to={"/student/sign-in"}>
+          <Link to={"/login"}>
             <Button className="min-w-28 md:px-10 md:py-6 md:min-w-40 md:text-lg bg-[#538ff8] hover:bg-[#4985eb]">
               Login
             </Button>

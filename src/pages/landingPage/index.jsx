@@ -49,8 +49,8 @@ const LandingPage = () => {
                     Home
                   </Link>
                   <Link
-                    to={"/student/sign-in"}
-                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 mx-4"
+                    to={"/login"}
+                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
                   >
                     Login
                   </Link>
@@ -66,8 +66,8 @@ const LandingPage = () => {
           <div className="subheading text-gray-600 mt-5">
             The Hassle-Free Path to your No Dues Certificate
           </div>
-          <Link to={"/student/sign-in"}>
-            <Button className=" bg-[#538ff8] hover:bg-[#4985eb] px-7 lg:px-14 lg:py-7 lg:text-xl my-12 mt-7">
+          <Link to={"/login"}>
+            <Button className=" bg-[#538ff8] hover:bg-[#4985eb] px-7 lg:px-14 lg:py-7 lg:text-2xl my-12">
               Login
             </Button>
           </Link>

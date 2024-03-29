@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { StudentLayout } from "./layouts/student-layout.jsx";
 import { AdminLayout } from "./layouts/admin-layout";
 import { DepartmentLayout } from "./layouts/department-layout";
+//Login page
+import LogIn from "./pages/loginPage/LogIn.jsx";
 //LandingPage
 import LandingPage from "./pages/landingPage/index.jsx";
 //Student-pages
@@ -25,6 +27,7 @@ import StudentDetail from "./pages/department/student-detail";
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
+  { path:"/login", element: <LogIn/> },
   {
     element: <StudentLayout />,
     children: [
