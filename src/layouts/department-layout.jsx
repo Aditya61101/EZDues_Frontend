@@ -6,7 +6,7 @@ export const DepartmentLayout = () => {
   return (
     <div className="h-screen w-screen bg-[#E5E8EC]">
       <DepartmentNavbar>
-        <DepartmentSidebar></DepartmentSidebar>
+        <DepartmentSidebar />
       </DepartmentNavbar>
       <div className="main md:absolute md:left-80 md:top-16 p-10 overflow-y-auto">
         {" "}

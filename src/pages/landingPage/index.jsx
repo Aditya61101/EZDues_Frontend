@@ -48,6 +48,12 @@ const LandingPage = () => {
                   >
                     Home
                   </Link>
+                  <a
+                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 mx-4"
+                    href="#about"
+                  >
+                    About
+                  </a>
                   <Link
                     to={"/login"}
                     className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
@@ -67,7 +73,10 @@ const LandingPage = () => {
             The Hassle-Free Path to your No Dues Certificate
           </div>
           <Link to={"/login"}>
-            <Button className=" bg-[#538ff8] hover:bg-[#4985eb] px-7 lg:px-14 lg:py-7 lg:text-2xl my-12">
+            <Button
+              variant="ezDues"
+              className="px-7 lg:px-14 lg:py-7 lg:text-2xl my-12"
+            >
               Login
             </Button>
           </Link>
@@ -96,15 +105,16 @@ const LandingPage = () => {
         </div>
       </section>
       <section
+        id="about"
         className="bg-white flex justify-evenly items-center flex-wrap bg-cover bg-center py-20 px-12"
         style={{
-          backgroundImage: `url(${images.landingAboutBg})`,
+          backgroundImage: `url(${images.landingAbout})`,
         }}
       >
         <div className=" max-w-[500px]">
-          <h1 className="text-[42px] font-medium mb-5 text-center md:text-left">
+          <p className="text-[42px] font-medium mb-5 text-center md:text-left">
             About
-          </h1>
+          </p>
           <p className="md:text-lg leading-8 text-[#525971] text-justify">
             EZDues is a "No Dues Portal" which would serve as a centralized
             platform for students to clear any pending dues or obligations to
@@ -112,7 +122,7 @@ const LandingPage = () => {
             to navigate through multiple departments or offices to obtain
             clearances, saving time and reducing administrative bottlenecks. The
             introduction of a "No Dues Portal" is a step towards digitizing the
-            administrative processes within IITP.
+            administrative processes within IIT Patna.
           </p>
         </div>
         <div>

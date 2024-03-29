@@ -10,8 +10,8 @@ const Footer = () => {
           <h1 className="w-full text-white text-3xl font-medium">EZDues</h1>
           <h2 className="w-full text-gray-300 text-xl">Cassiopeia</h2>
           <div className="flex gap-3 justify-start items-center">
-            <img loading="lazy" src={images.IITPatnaLogo} alt="IIT Patna" className="h-14 mt-7"/>
-            <img loading="lazy" src={images.STCLogo} alt="STC" className="h-14 mt-7" />
+            <img loading="lazy" src={images.IITPatna} alt="IIT Patna" className="h-14 mt-7"/>
+            <img loading="lazy" src={images.STC} alt="STC" className="h-14 mt-7" />
           </div>
         </div>
         <div className="text-white flex flex-col justify-start items-start gap-y-2">
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
         <div className="text-white flex flex-col justify-start items-start gap-y-2 md:gap-y-5">
           <Link to={"/login"}>
-            <Button className="min-w-28 md:px-10 md:py-6 md:min-w-40 md:text-lg bg-[#538ff8] hover:bg-[#4985eb]">
+            <Button variant="ezDues" className="min-w-28 md:px-10 md:py-6 md:min-w-40 md:text-lg">
               Login
             </Button>
           </Link>

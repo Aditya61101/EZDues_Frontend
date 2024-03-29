@@ -14,9 +14,9 @@ const DepartmentNavbar = ({ children }) => {
                 loading="lazy"
                 src={images.logo}
                 alt="logo"
-                className="h-4"
+                className="h-3 lg:h-4"
               />{" "}
-              <p className="text-xl font-extralight mx-2">| Department</p>
+              <p className="lg:text-xl font-extralight mx-2">| Department</p>
             </div>
           </div>
           <div className="flex items-center">
