@@ -14,64 +14,66 @@ import { images } from "@/constants";
 const SidebarContent = () => {
   return (
     <>
-      <div className="flex flex-col items-start justify-center gap-5">
+      <div className="flex flex-col items-start justify-center gap-4">
         <NavLink
-          to={"/department/"}
+          to={"/department"}
           className={({ isActive }) =>
             isActive
-              ? "text-md p-5 bg-slate-200 w-full rounded-md"
-              : "text-md p-5 w-full rounded-md"
+              ? "text-md p-3 bg-slate-200 w-full rounded-md flex items-center"
+              : "text-md p-3 w-full rounded-md flex items-center"
           }
           end={true}
         >
-          <Home className="inline mx-2" size={20} /> Dashboard
+          <Home className="mx-2" size={20} />
+          <p>Dashboard</p>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-md p-5 bg-slate-200 w-full rounded-md"
-              : "text-md p-5 w-full rounded-md"
+              ? "text-md p-3 bg-slate-200 w-full rounded-md flex items-center"
+              : "text-md p-3 w-full rounded-md flex items-center"
           }
           end={true}
-          to={"/department/paidfines/"}
+          to={"/department/paid-fines"}
         >
-          <BadgeCheckIcon className="inline mx-2" size={20} /> Approve Paid
-          Fines
+          <BadgeCheckIcon className="mx-2" size={20} />
+          <p>Approve Paid Fines</p>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-md p-5 bg-slate-200 w-full rounded-md"
-              : "text-md p-5 w-full rounded-md"
+              ? "text-md p-3 bg-slate-200 w-full rounded-md flex items-center"
+              : "text-md p-3 w-full rounded-md flex items-center"
           }
           end={true}
-          to={"/department/nodues/"}
+          to={"/department/no-dues"}
         >
-          <FileCheck className="inline mx-2" size={20} /> No Dues Requests
+          <FileCheck className="mx-2" size={20} />
+          <p>No Dues Requests</p>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-md p-5 bg-slate-200 w-full rounded-md"
-              : "text-md p-5 w-full rounded-md"
+              ? "text-md p-3 bg-slate-200 w-full rounded-md flex items-center"
+              : "text-md p-3 w-full rounded-md flex items-center"
           }
           end={true}
-          to={"/department/search/"}
+          to={"/department/search"}
         >
-          <UserSearchIcon className="inline mx-2" size={20} />
-          Search Student
+          <UserSearchIcon className="mx-2" size={20} />
+          <p>Search Student</p>
         </NavLink>
       </div>
-      <div className="mb-5 flex flex-col gap-5 text-center">
+      <div className="flex flex-col gap-5 ml-5">
         <NavLink
-          className="text-md p-5 w-full rounded-md text-[#538ff8]"
-          to={"/department/"}
+          className="text-md w-full rounded-md text-[#538ff8]"
+          to="/department"
         >
           <BellPlus className="inline mx-2" size={20} />
           Send Reminder
         </NavLink>
-        <NavLink to="/department/new/">
-          <Button className="bg-[#538ff8] text-lg py-7 px-10 hover:bg-blue-600">
+        <NavLink to="/department/new">
+          <Button variant="ezDues" className="text-lg py-6 px-7">
             + New Fine
           </Button>
         </NavLink>
@@ -93,14 +95,14 @@ const DepartmentSidebar = () => {
           side="left"
           className="flex flex-col justify-between pt-20"
         >
-          <SidebarContent></SidebarContent>
+          <SidebarContent />
         </SheetContent>
       </Sheet>
       <div
         className="hidden md:flex fixed left-0 top-16 w-80 bg-white flex-col justify-between p-6"
         style={{ borderTop: "2px solid #E5E8EC", height: "calc(100vh - 4rem)" }}
       >
-        <SidebarContent></SidebarContent>
+        <SidebarContent />
       </div>
     </>
   );
