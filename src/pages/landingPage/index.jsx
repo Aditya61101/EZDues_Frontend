@@ -42,15 +42,15 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="flex items-center">
-                <div className="hidden md:block">
+                <div className="hidden md:gap-x-3 md:flex md:items-center">
                   <Link
                     to="/"
-                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 mx-4"
+                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
                   >
                     Home
                   </Link>
                   <a
-                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200 mx-4"
+                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
                     href="#about"
                   >
                     About
