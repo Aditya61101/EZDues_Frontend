@@ -5,17 +5,18 @@ import { Button } from "@/components/ui/button";
 import { Globe, Clock, CheckCheck } from "lucide-react";
 import Footer from "@/components/footer";
 import Sidebar from "@/components/sidebar";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 const HeroHeading = () => {
-  return (
-    <div className="heading">
-      <div className="largest">No Dues</div>
-      <div className="middle">With</div>
-      <div className="largest bottom">
-        No <span className=" text-[#538FF8]">Worries</span>
-      </div>
-    </div>
-  );
+    return (
+        <div className="heading">
+            <div className="largest">No Dues</div>
+            <div className="middle">With</div>
+            <div className="largest bottom">
+                No <span className=" text-[#538FF8]">Worries</span>
+            </div>
+        </div>
+    );
 };
 
 const LandingPage = () => {
@@ -128,10 +129,10 @@ const LandingPage = () => {
         <div>
           <img src={images.aboutIllustration} />
         </div>
-      </section>
-      <Footer />
-    </div>
-  );
+       </section>
+       <ScrollToTopButton />
+       <Footer />
+    );
 };
 
 export default LandingPage;
