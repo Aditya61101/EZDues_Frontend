@@ -4,7 +4,7 @@ import { LogOutIcon } from "lucide-react";
 
 const DepartmentNavbar = ({ children }) => {
   return (
-    <nav className="bg-white">
+    <nav className="bg-white fixed w-full z-50">
       <div className="mx-auto px-5 sm:px-10">
         <div className="flex justify-between h-16">
           {children}
