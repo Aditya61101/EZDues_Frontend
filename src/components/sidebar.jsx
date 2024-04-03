@@ -1,6 +1,5 @@
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetFooter,
   SheetTrigger,
@@ -9,7 +8,6 @@ import { Menu, Home, UserCircle2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { images } from "@/constants";
-import { useState } from "react";
 
 const Sidebar = () => {
   return (

@@ -7,7 +7,7 @@ import { StudentLayout } from "./layouts/student-layout.jsx";
 import { AdminLayout } from "./layouts/admin-layout";
 import { DepartmentLayout } from "./layouts/department-layout";
 //Login page
-import Login from "./pages/loginPage/LogIn.jsx";
+import Login from "./pages/loginPage/Login.jsx";
 //LandingPage
 import LandingPage from "./pages/landingPage/index.jsx";
 //Student-pages
