@@ -18,7 +18,7 @@ const InfoCard = ({ departmentName }) => {
 const AdminDashboard = () => {
     return (
         <div className="flex flex-wrap justify-between items-start">
-            <NavLink to="/admin">
+            <NavLink to="/admin" className="mx-auto lg:mx-0">
                 <Button variant="ezDues" className="text-lg py-6 px-7">
                     + Add Department
                 </Button>
@@ -26,35 +26,35 @@ const AdminDashboard = () => {
             <div className="flex w-full flex-wrap justify-evenly items-start lg:flex-nowrap">
                 <InfoCard
                     departmentName="Department Of Computer Science And Engineering"
-                ></InfoCard>
+                />
                 <InfoCard
                     departmentName="Department Of Electrical Engineering"
-                ></InfoCard>
+                />
                 <InfoCard
                     departmentName="Department Of Mechanical Engineering"
-                ></InfoCard>
+                />
             </div>
             <div className="flex w-full flex-wrap justify-evenly items-start lg:flex-nowrap">
                 <InfoCard
                     departmentName="Department Of Metallurgical Engineering"
-                ></InfoCard>
+                />
                 <InfoCard
                     departmentName="Department Of Mathematics and Computing"
-                ></InfoCard>
+                />
                 <InfoCard
                     departmentName="Department Of Computer Science And Engineering"
-                ></InfoCard>
+                />
             </div>
             <div className="flex w-full flex-wrap justify-evenly items-start lg:flex-nowrap">
                 <InfoCard
                     departmentName="Department Of Computer Science And Engineering"
-                ></InfoCard>
+                />
                 <InfoCard
                     departmentName="Department Of Computer Science And Engineering"
-                ></InfoCard>
+                />
                 <InfoCard
                     departmentName="Department Of Computer Science And Engineering"
-                ></InfoCard>
+                />
             </div>
         </div>
     );

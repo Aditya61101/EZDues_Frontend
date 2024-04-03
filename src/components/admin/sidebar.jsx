@@ -15,7 +15,7 @@ const SidebarContent = () => {
         <>
             <div className="flex flex-col items-start justify-center gap-4">
                 <NavLink
-                    to={"/admin/"}
+                    to={"/admin"}
                     className={({ isActive }) =>
                         isActive
                             ? "text-md p-3 bg-slate-200 w-full rounded-md flex items-center"

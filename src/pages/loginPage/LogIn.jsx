@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import images from "@/constants/images";
 import { Button } from "@/components/ui/button";
 import { UserRound, Lock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const StudentField = () => {
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     console.log("pressed");
+    navigate("/student");
   };
   return (
     <div className="flex flex-col mt-6 space-y-6">
@@ -49,10 +52,12 @@ const StudentField = () => {
 };
 
 const DeptField = () => {
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     console.log("pressed");
+    navigate("/department");
   };
   return (
     <div className="flex flex-col mt-6 space-y-6">
@@ -104,10 +109,12 @@ const DeptField = () => {
 };
 
 const AdminField = () => {
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     console.log("pressed");
+    navigate("/admin");
   };
   return (
     <div className="mt-6">
