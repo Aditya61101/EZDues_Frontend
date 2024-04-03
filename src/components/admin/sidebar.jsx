@@ -6,7 +6,6 @@ import {
     ShieldPlus,
     CircleCheckBig,
     UserRoundCheck,
-
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -25,7 +24,7 @@ const SidebarContent = () => {
                     end={true}
                 >
                     <Landmark className="mx-2" size={20} />
-                    <p>Dashboard</p>
+                    <p>Departments</p>
                 </NavLink>
                 <NavLink
                     className={({ isActive }) =>
@@ -34,7 +33,7 @@ const SidebarContent = () => {
                             : "text-md p-3 w-full rounded-md flex items-center"
                     }
                     end={true}
-                    to={"/admin/"}
+                    to={"/admin/admin-students"}
                 >
                     <GraduationCap className="mx-2" size={20} />
                     <p>Students</p>
@@ -43,21 +42,21 @@ const SidebarContent = () => {
             <div className="flex flex-col gap-5 ml-5">
                 <NavLink
                     className="text-md w-full rounded-md text-[#538ff8]"
-                    to="/department"
+                    to="/admin"
                 >
                     <ShieldPlus className="inline mx-2" size={20} />
                     Create Admin
                 </NavLink>
                 <NavLink
                     className="text-md w-full rounded-md text-[#538ff8]"
-                    to="/department"
+                    to="/admin"
                 >
                     <CircleCheckBig className="inline mx-2" size={20} />
                     Auto Approve
                 </NavLink>
                 <NavLink
                     className="text-md w-full rounded-md text-[#538ff8]"
-                    to="/department"
+                    to="/admin"
                 >
                     <UserRoundCheck className="inline mx-2" size={20} />
                     Make Batch Eligible

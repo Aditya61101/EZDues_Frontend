@@ -1,4 +1,6 @@
 import { Landmark } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { NavLink } from "react-router-dom";
 
 const InfoCard = ({ departmentName }) => {
     return (
@@ -16,6 +18,11 @@ const InfoCard = ({ departmentName }) => {
 const AdminDashboard = () => {
     return (
         <div className="flex flex-wrap justify-between items-start">
+            <NavLink to="/admin">
+                <Button variant="ezDues" className="text-lg py-6 px-7">
+                    + Add Department
+                </Button>
+            </NavLink>
             <div className="flex w-full flex-wrap justify-evenly items-start lg:flex-nowrap">
                 <InfoCard
                     departmentName="Department Of Computer Science And Engineering"
@@ -25,6 +32,17 @@ const AdminDashboard = () => {
                 ></InfoCard>
                 <InfoCard
                     departmentName="Department Of Mechanical Engineering"
+                ></InfoCard>
+            </div>
+            <div className="flex w-full flex-wrap justify-evenly items-start lg:flex-nowrap">
+                <InfoCard
+                    departmentName="Department Of Metallurgical Engineering"
+                ></InfoCard>
+                <InfoCard
+                    departmentName="Department Of Mathematics and Computing"
+                ></InfoCard>
+                <InfoCard
+                    departmentName="Department Of Computer Science And Engineering"
                 ></InfoCard>
             </div>
             <div className="flex w-full flex-wrap justify-evenly items-start lg:flex-nowrap">
