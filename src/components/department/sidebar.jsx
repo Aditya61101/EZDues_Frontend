@@ -9,14 +9,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
-import { images } from "@/constants";
 
 const SidebarContent = () => {
   return (
     <>
       <div className="flex flex-col items-start justify-center gap-4">
         <NavLink
-          to={"/department/"}
+          to={"/department"}
           className={({ isActive }) =>
             isActive
               ? "text-md p-3 bg-slate-200 w-full rounded-md flex items-center"
@@ -34,7 +33,7 @@ const SidebarContent = () => {
               : "text-md p-3 w-full rounded-md flex items-center"
           }
           end={true}
-          to={"/department/paid-fines/"}
+          to={"/department/paid-fines"}
         >
           <BadgeCheckIcon className="mx-2" size={20} />
           <p>Approve Paid Fines</p>
@@ -46,7 +45,7 @@ const SidebarContent = () => {
               : "text-md p-3 w-full rounded-md flex items-center"
           }
           end={true}
-          to={"/department/no-dues/"}
+          to={"/department/no-dues"}
         >
           <FileCheck className="mx-2" size={20} />
           <p>No Dues Requests</p>
@@ -58,7 +57,7 @@ const SidebarContent = () => {
               : "text-md p-3 w-full rounded-md flex items-center"
           }
           end={true}
-          to={"/department/search/"}
+          to={"/department/search"}
         >
           <UserSearchIcon className="mx-2" size={20} />
           <p>Search Student</p>
@@ -72,7 +71,7 @@ const SidebarContent = () => {
           <BellPlus className="inline mx-2" size={20} />
           Send Reminder
         </NavLink>
-        <NavLink to="/department/new/">
+        <NavLink to="/department/new">
           <Button variant="ezDues" className="text-lg py-6 px-7">
             + New Fine
           </Button>

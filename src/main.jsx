@@ -7,14 +7,15 @@ import { StudentLayout } from "./layouts/student-layout.jsx";
 import { AdminLayout } from "./layouts/admin-layout";
 import { DepartmentLayout } from "./layouts/department-layout";
 //Login page
-import Login from "./pages/loginPage/LogIn.jsx";
+import Login from "./pages/loginPage/Login.jsx";
 //LandingPage
 import LandingPage from "./pages/landingPage/index.jsx";
 //Student-pages
 import StudentHome from "./pages/student/home.jsx";
 import StudentProfile from "./pages/student/profile-page.jsx";
 //Admin-pages
-import AdminHome from "./pages/admin/home";
+import AdminDashboard from "./pages/admin/dashboard";
+import AdminStudents from "./pages/admin/admin-students";
 //Department Pages
 import DepartmentDashboard from "./pages/department/dashboard";
 import NoDuesRequests from "./pages/department/no-dues-requests";
@@ -35,7 +36,10 @@ const router = createBrowserRouter([
   },
   {
     element: <AdminLayout />,
-    children: [{ path: "/admin", element: <AdminHome /> }],
+    children: [
+      { path: "/admin", element: <AdminDashboard /> },
+      { path: "/admin/admin-students", element: <AdminStudents /> }
+    ],
   },
   {
     element: <DepartmentLayout />,

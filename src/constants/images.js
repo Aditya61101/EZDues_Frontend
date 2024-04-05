@@ -11,6 +11,7 @@ import passEm from "../assets/passem.svg"
 import STC from "../assets/STCLogo.png"
 import IITPatna from "../assets/IITPatnaLogo.png"
 import aboutIllustration from "../assets/aboutIllustration.svg"
+import Profile from "../assets/Profile.svg"
 
 export default {
     logo,
@@ -22,5 +23,6 @@ export default {
     deptLogin,
     adminLogin,
     STC, IITPatna,
-    aboutIllustration
+    aboutIllustration,
+    Profile,
 };
