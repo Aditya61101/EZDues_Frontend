@@ -5,7 +5,7 @@ import ScrollToTopButton from "@/components/ScrollToTop";
 export const StudentLayout = () => {
     return (
         <>
-            <StudentNavbar />
+            {/* <StudentNavbar /> */}
             <ScrollToTopButton />
             <Outlet />
         </>
