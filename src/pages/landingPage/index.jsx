@@ -4,7 +4,7 @@ import images from "@/constants/images";
 import { Button } from "@/components/ui/button";
 import { Globe, Clock, CheckCheck } from "lucide-react";
 import Footer from "@/components/footer";
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/Sidebar";
 import ScrollToTopButton from "@/components/ScrollToTop";
 
 const HeroHeading = () => {
