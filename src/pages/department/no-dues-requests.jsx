@@ -104,9 +104,9 @@ const handleAutoApprove= ()=>{
 
   return (
     <>
-      <div className="flex flex-col justify-start h-full">
-        <div className="w-full h-1/5 flex flex-row justify-between py-4">
-      <div className='w-3/5 flex flex-row justify-center'>
+      <div className="flex flex-col justify-start h-full ">
+        <div className="w-full h-1/5 flex flex-row justify-between py-4 flex-wrap">
+      <div className='w-full md:w-3/5 flex flex-row justify-center'>
         <form onSubmit={handleSearch} className='flex items-center relative w-full'>
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
           <input
@@ -120,13 +120,13 @@ const handleAutoApprove= ()=>{
         </form>
       </div>
       <div className='p-3 flex flex-row justify-evenly'>
-        <div className='md:text-[20px] text-xs mr-10 pt-2'>Auto Approve</div>
+        <div className='md:text-[20px] text-xs mr-10  md:pt-2 pt-2'>Auto Approve</div>
         
-        <div onClick={handleAutoApprove}><Switch className="bg-[#538ff8]" onClick={handleAutoApprove}></Switch></div>
+        <div onClick={handleAutoApprove}><Switch className="bg-[#538ff8] hover:none" onClick={handleAutoApprove}></Switch></div>
         
       </div>
     </div>
-    <div className="w-full h-4/5 flex-col flex-wrap">
+    <div className="w-full h-4/5 flex-col flex-wrap mt-10 md:mt-2">
             {studentDetails.map((studentDetail, index) => (
               <div key={index} className="w-full p-2 h-auto md:h-[107px] rounded-[20px] flex flex-row bg-[#fff]  pt-5 flex-wrap" style={{ marginBottom: '0.5rem' }}>
                 <div className="flex flex-row justify-start items-center md:basis-1/3 ">
@@ -136,7 +136,7 @@ const handleAutoApprove= ()=>{
                     <div className="md:text-[20px] text-[12px] font-light">{studentDetail.roll}</div>
                   </div>
                 </div>
-                <div className="flex flex-row justify-start items-center md:basis-1/3 ">
+                <div className="flex flex-row md:justify-start justify-between items-center md:basis-1/3 basis-1 ">
                   <div className="md:text-[16px] text-[10px] font-light mr-10">
                     Status
                   </div>
@@ -144,9 +144,9 @@ const handleAutoApprove= ()=>{
                     {studentDetail.pendingDues ? <Pending/> : <Clear/> }
                   </div>
                 </div>
-                <div className="flex flex-row justify-end items-center md:basis-1/3">
+                <div className="flex flex-row md:justify-end justify-center items-center md:basis-1/3 p-3">
                   <button 
-                    className="flex md:w-[264px] w-[200px] h-[55px] px-[33px] py-[17px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[10px] bg-[#2bc9ac] text-white"
+                    className="flex md:w-[264px] w-full md:h-[55px] h-2/3 px-[33px] py-[17px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[10px] bg-[#2bc9ac] text-white"
                     onClick={() => {/* add onclick functionality here */}}
                   >
                   ✓✓ Approve No Dues
