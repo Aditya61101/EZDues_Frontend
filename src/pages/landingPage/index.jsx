@@ -4,7 +4,7 @@ import images from "@/constants/images";
 import { Button } from "@/components/ui/button";
 import { Globe, Clock, CheckCheck } from "lucide-react";
 import Footer from "@/components/footer";
-import Sidebar from "@/components/Sidebar";
+// import Sidebar from "@/components/admin/sidebar";
 import ScrollToTopButton from "@/components/ScrollToTop";
 
 const HeroHeading = () => {
@@ -62,7 +62,7 @@ const LandingPage = () => {
                     Login
                   </Link>
                 </div>
-                <Sidebar />
+                {/* <Sidebar /> */}
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@ const LandingPage = () => {
       <Footer />
       <ScrollToTopButton />
     </div>
-  )
+  );
 };
 
 export default LandingPage;
