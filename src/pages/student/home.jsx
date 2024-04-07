@@ -4,12 +4,10 @@ import { Filter } from "lucide-react";
 import StudentCard from "@/components/student/card.jsx";
 import StudentNavbar from "@/components/student/navbar";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
+
 import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import { Search } from "lucide-react";
+// import React, { useState } from "react";
 
 const StudentHome = () => {
   // Sample data for StudentCard components
