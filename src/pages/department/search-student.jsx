@@ -128,8 +128,8 @@ const addFineHandler = (event)=>
   return (
     <>
        <div className="flex flex-col justify-start h-full">
-        <div className="w-full h-1/5 flex flex-row justify-between py-4">
-      <div className='w-3/5 flex flex-row justify-center'>
+        <div className="w-full h-1/5 flex flex-row justify-between py-4 flex-wrap">
+      <div className='md:w-3/5 w-full flex flex-row justify-center'>
         <form onSubmit={handleSearch} className='flex items-center relative w-full'>
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
           <input
@@ -159,13 +159,13 @@ const addFineHandler = (event)=>
                   <div className="mr-4 md:mr-[27px]">{studentDetail.department}</div>
                   <div className='mr-4 md:mr-[27px]'>{studentDetail.batch}</div>
                 </div>
-                <div className="flex flex-row justify-center items-center basis-1/3">
+                <div className="flex flex-row justify-center items-center md:basis-1/3 basis-1">
 
                   <Button
                       className={`${
                         
                           "bg-[#f9f9f9] text-[#3d3d3d] hover:text-[#538ff8] hover:bg-[#538ff81f]"
-                      }  w-auto md:w-1/2 h-3/5 mb-2 md:mb-0 flex-1 shrink text-[12px] md:text-[20px] font-light mr-2 md:mr-4`}
+                      }  w-auto md:w-1/2 w-auto h-3/5 mb-2 md:mb-0 flex-1 shrink text-[12px] md:text-[20px] font-light mr-2 md:mr-4`}
                     
 
                       onClick= {detailHandler}

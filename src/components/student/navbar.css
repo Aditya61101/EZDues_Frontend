@@ -1,0 +1,37 @@
+.nav {
+  display: flex;
+  align-items: center; /* Center vertically */
+  height: 48px;
+  padding: 10px 20px; /* Add padding */
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 20px;
+}
+
+.navbar-heading {
+  flex: 1; /* Allow the heading to grow and take up remaining space */
+  color: #000000;
+  font-family: "Poppins-Medium", Helvetica;
+  font-size: 32px;
+  font-weight: 700;
+  margin-right: auto; /* Pushes the heading to the left */
+}
+
+.circle {
+  margin-right: 10px; /* Add spacing between the circle and heading */
+}
+
+.circle img {
+  height: 60px; /* Match the height of the Navbar */
+  width: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Create a circular shape */
+  object-fit: cover; /* Ensure the image covers the circle */
+  /* margin: 50px; */
+  object-fit: cover;
+  /* position: fixed; */
+  /* top: 0; */
+  /* width: 74px; */
+  margin-right: 50px;
+  border-color: #538ff8;
+  border-width: 2px;
+}

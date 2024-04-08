@@ -1,0 +1,111 @@
+.search-box {
+  height: 50px;
+  width: 25%;
+  background-color: #a7aabd17;
+  border-radius: 33px;
+  height: 50px;
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 554px;
+  padding-left: 2.5%;
+  display: flex;
+  margin-right: 12px;
+}
+.search-inp {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.search-icon {
+  margin-top: 12px;
+  margin-right: 12px;
+}
+/* .box .rectangle{*/
+.filter-btn {
+  height: 50px;
+  width: 164px;
+  background-color: #a7aabd17;
+  border-radius: 33px;
+
+  left: 0;
+  position: relative;
+  top: 0;
+  /* width: 554px; */
+  /* padding-left: 2.5%; */
+  align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #a7aabd;
+  font-size: 20px;
+  padding-left: 0;
+}
+.home {
+  padding: 0 5% 0 5%;
+}
+
+.filter-options {
+  display: flex;
+  /* Adjust as needed */
+  margin-top: 20px;
+}
+.filter-option-btn {
+  height: 47px;
+  width: 192px;
+  background-color: #fff;
+  border-radius: 33px;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #a7aabd;
+  font-size: 25px;
+  margin-right: 20px;
+}
+.filter-option-btn:focus {
+  height: 47px;
+  background-color: #538ff8;
+  color: #fff;
+}
+.text-wrapper {
+  font-family: "Poppins-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+  margin-top: 20px;
+}
+
+@media (min-width: 992px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Render 3 cards per row */
+    gap: 20px; /* Add gap between the cards */
+  }
+}
+
+/* Responsive layout for medium screens (2 cards per row) */
+@media (max-width: 1036px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Render 2 cards per row */
+    gap: 20px; /* Add gap between the cards */
+  }
+}
+
+/* Responsive layout for small screens (1 card per row) */
+@media (max-width: 635px) {
+  .card-grid {
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(1, 1fr); /* Render 1 card per row */
+    gap: 20px; /* Add gap between the cards */
+  }
+}
