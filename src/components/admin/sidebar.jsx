@@ -42,7 +42,7 @@ const SidebarContent = () => {
             <div className="flex flex-col gap-5 ml-5">
                 <NavLink
                     className="text-md w-full rounded-md text-[#538ff8]"
-                    to="/admin"
+                    to="/admin/create-admin"
                 >
                     <ShieldPlus className="inline mx-2" size={20} />
                     Create Admin

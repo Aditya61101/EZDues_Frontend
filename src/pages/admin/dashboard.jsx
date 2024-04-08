@@ -18,7 +18,7 @@ const InfoCard = ({ departmentName }) => {
 const AdminDashboard = () => {
     return (
         <div className="flex flex-wrap justify-between items-start">
-            <NavLink to="/admin" className="mx-auto lg:mx-0">
+            <NavLink to="/admin/add-department" className="mx-auto lg:mx-0">
                 <Button variant="ezDues" className="text-lg py-6 px-7">
                     + Add Department
                 </Button>
