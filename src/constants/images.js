@@ -12,17 +12,19 @@ import STC from "../assets/STCLogo.png"
 import IITPatna from "../assets/IITPatnaLogo.png"
 import aboutIllustration from "../assets/aboutIllustration.svg"
 import Profile from "../assets/Profile.svg"
+import DropBox from "../assets/Dropbox.svg";
 
 export default {
     logo,
     favicon,
     landingbg,
     landingAbout,
-    depEm,passEm,userEm,
+    depEm, passEm, userEm,
     studentLogin,
     deptLogin,
     adminLogin,
     STC, IITPatna,
     aboutIllustration,
     Profile,
+    DropBox,
 };
