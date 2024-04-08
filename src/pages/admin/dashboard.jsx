@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const InfoCard = ({ departmentName }) => {
     return (
-        <div className="w-80 h-50 p-10 flex flex-col justify-center items-center bg-white rounded-3xl m-5">
+        <div className="w-80 h-50 p-10 flex flex-col justify-center items-center bg-white rounded-3xl m-5 transition duration-300 ease-in-out transform hover:scale-105">
             <div className="flex flex-col items-center">
                 <Landmark className="mb-4" size={40} style={{ strokeWidth: 1.3 }} />
                 <h1 className="text-lg font-normal text-center" style={{ color: "black" }}>
