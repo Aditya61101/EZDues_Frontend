@@ -76,7 +76,7 @@ const AdminStudents = () => {
                             />
                         </form>
                     </div>
-                    <NavLink to="/admin" className="w-full md:w-auto mx-auto lg:mx-0">
+                    <NavLink to="/admin/add-student" className="w-full md:w-auto mx-auto lg:mx-0">
                         <Button variant="ezDues" className="text-lg py-6 px-7">
                             + Register Students
                         </Button>

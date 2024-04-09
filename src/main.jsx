@@ -18,6 +18,7 @@ import AdminDashboard from "./pages/admin/dashboard";
 import AdminStudents from "./pages/admin/admin-students";
 import AddDepartmentAdmin from "./pages/admin/add-department";
 import CreateAdmin from "./pages/admin/create-admin";
+import CreateStudentAdmin from "./pages/admin/add-students";
 //Department Pages
 import DepartmentDashboard from "./pages/department/dashboard";
 import NoDuesRequests from "./pages/department/no-dues-requests";
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
       { path: "/admin/admin-students", element: <AdminStudents /> },
       { path: "/admin/add-department", element: <AddDepartmentAdmin /> },
       { path: "/admin/create-admin", element: <CreateAdmin /> },
+      { path: "/admin/add-student", element: <CreateStudentAdmin /> },
     ],
   },
   {

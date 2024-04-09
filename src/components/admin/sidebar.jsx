@@ -40,15 +40,23 @@ const SidebarContent = () => {
                 </NavLink>
             </div>
             <div className="flex flex-col gap-5 ml-5">
-                <NavLink
-                    className="text-md w-full rounded-md text-[#538ff8]"
+                <NavLink className={({ isActive }) =>
+                    isActive
+                        ? "text-md w-full rounded-md text-[#00008B]"
+                        : "text-md w-full rounded-md text-[#538ff8]"
+                }
+                    end={true}
                     to="/admin/create-admin"
                 >
                     <ShieldPlus className="inline mx-2" size={20} />
                     Create Admin
                 </NavLink>
-                <NavLink
-                    className="text-md w-full rounded-md text-[#538ff8]"
+                <NavLink className={({ isActive }) =>
+                    isActive
+                        ? "text-md w-full rounded-md text-[#00008B]"
+                        : "text-md w-full rounded-md text-[#538ff8]"
+                }
+                    end={true}
                     to="/admin"
                 >
                     <CircleCheckBig className="inline mx-2" size={20} />
