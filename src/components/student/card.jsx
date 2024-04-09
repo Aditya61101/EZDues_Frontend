@@ -71,13 +71,11 @@ const StudentCard = (props) => {
       return "rectangle green-rectangle approved";
     } else if (isPending) {
       return "rectangle gray-rectangle pending";
-    } else {
-      return "rectangle";
     }
   };
 
   return (
-    <div className="box">
+    <div className="box hover:shadow-md">
       <div className={getRectangleClassName()}>
         <div className="heading-4">{dept}</div>
         {renderRequestElement()}

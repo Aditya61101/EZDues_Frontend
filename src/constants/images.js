@@ -11,7 +11,7 @@ import passEm from "../assets/passem.svg"
 import STC from "../assets/STCLogo.png"
 import IITPatna from "../assets/IITPatnaLogo.png"
 import aboutIllustration from "../assets/aboutIllustration.svg"
-import Profile from "../assets/Profile.svg"
+import Profile from "../assets/user-logo.svg"
 import DropBox from "../assets/Dropbox.svg";
 
 export default {
