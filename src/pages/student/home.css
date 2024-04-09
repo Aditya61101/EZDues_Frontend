@@ -32,19 +32,12 @@
   left: 0;
   position: relative;
   top: 0;
-  /* width: 554px; */
-  /* padding-left: 2.5%; */
-  align-content: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #a7aabd;
   font-size: 20px;
-  padding-left: 0;
-}
-.home {
-  padding: 0 5% 0 5%;
 }
 
 .filter-options {
@@ -55,14 +48,12 @@
 .filter-option-btn {
   height: 47px;
   width: 192px;
-  background-color: #fff;
   border-radius: 33px;
   border-width: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #a7aabd;
   font-size: 25px;
   margin-right: 20px;
 }
