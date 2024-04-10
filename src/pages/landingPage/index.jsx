@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import images from "@/constants/images";
 import { Button } from "@/components/ui/button";
 import { Globe, Clock, CheckCheck } from "lucide-react";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer";
 // import Sidebar from "@/components/admin/sidebar";
 import ScrollToTopButton from "@/components/ScrollToTop";
 
