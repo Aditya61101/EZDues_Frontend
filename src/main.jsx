@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+// Spinner for the lazy loading
+import Spinner from "./components/spinner";
 //Layouts
 import { StudentLayout } from "./layouts/student-layout.jsx";
 import { AdminLayout } from "./layouts/admin-layout";
@@ -11,21 +13,21 @@ import Login from "./pages/loginPage/Login.jsx";
 //LandingPage
 import LandingPage from "./pages/landingPage/index.jsx";
 //Student-pages
-import StudentHome from "./pages/student/home.jsx";
-import StudentProfile from "./pages/student/profile-page.jsx";
+const StudentHome = React.lazy(() => import("./pages/student/home.jsx"));
+const StudentProfile = React.lazy(() => import("./pages/student/profile-page.jsx"));
 //Admin-pages
-import AdminDashboard from "./pages/admin/dashboard";
-import AdminStudents from "./pages/admin/admin-students";
-import AddDepartmentAdmin from "./pages/admin/add-department";
-import CreateAdmin from "./pages/admin/create-admin";
-import CreateStudentAdmin from "./pages/admin/add-students";
+const AdminDashboard = React.lazy(() => import("./pages/admin/dashboard"));
+const AdminStudents = React.lazy(() => import("./pages/admin/admin-students"));
+const AddDepartmentAdmin = React.lazy(() => import("./pages/admin/add-department"));
+const CreateAdmin = React.lazy(() => import("./pages/admin/create-admin"));
+const CreateStudentAdmin = React.lazy(() => import("./pages/admin/add-students"));
 //Department Pages
-import DepartmentDashboard from "./pages/department/dashboard";
-import NoDuesRequests from "./pages/department/no-dues-requests";
-import PaidFines from "./pages/department/approve-paid";
-import SearchStudent from "./pages/department/search-student";
-import NewFine from "./pages/department/new-fine";
-import StudentDetail from "./pages/department/student-detail";
+const DepartmentDashboard = React.lazy(() => import("./pages/department/dashboard"));
+const NoDuesRequests = React.lazy(() => import("./pages/department/no-dues-requests"));
+const PaidFines = React.lazy(() => import("./pages/department/approve-paid"));
+const SearchStudent = React.lazy(() => import("./pages/department/search-student"));
+const NewFine = React.lazy(() => import("./pages/department/new-fine"));
+const StudentDetail = React.lazy(() => import("./pages/department/student-detail"));
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -33,29 +35,29 @@ const router = createBrowserRouter([
   {
     element: <StudentLayout />,
     children: [
-      { path: "/student", element: <StudentHome /> },
-      { path: "/student/profile", element: <StudentProfile /> },
+      { path: "/student", element: <Suspense fallback={<Spinner />}><StudentHome /></Suspense> },
+      { path: "/student/profile", element: <Suspense fallback={<Spinner />}><StudentProfile /></Suspense> },
     ],
   },
   {
     element: <AdminLayout />,
     children: [
-      { path: "/admin", element: <AdminDashboard /> },
-      { path: "/admin/admin-students", element: <AdminStudents /> },
-      { path: "/admin/add-department", element: <AddDepartmentAdmin /> },
-      { path: "/admin/create-admin", element: <CreateAdmin /> },
-      { path: "/admin/add-student", element: <CreateStudentAdmin /> },
+      { path: "/admin", element: <Suspense fallback={<Spinner />}><AdminDashboard /></Suspense> },
+      { path: "/admin/admin-students", element: <Suspense fallback={<Spinner />}><AdminStudents /></Suspense> },
+      { path: "/admin/add-department", element: <Suspense fallback={<Spinner />}><AddDepartmentAdmin /></Suspense> },
+      { path: "/admin/create-admin", element: <Suspense fallback={<Spinner />}><CreateAdmin /></Suspense> },
+      { path: "/admin/add-student", element: <Suspense fallback={<Spinner />}><CreateStudentAdmin /></Suspense> },
     ],
   },
   {
     element: <DepartmentLayout />,
     children: [
-      { path: "/department", element: <DepartmentDashboard /> },
-      { path: "/department/paid-fines", element: <PaidFines /> },
-      { path: "/department/no-dues", element: <NoDuesRequests /> },
-      { path: "/department/search", element: <SearchStudent /> },
-      { path: "/department/new", element: <NewFine /> },
-      { path: "/department/student/:studentID", element: <StudentDetail /> },
+      { path: "/department", element: <Suspense fallback={<Spinner />}><DepartmentDashboard /></Suspense> },
+      { path: "/department/paid-fines", element: <Suspense fallback={<Spinner />}><PaidFines /></Suspense> },
+      { path: "/department/no-dues", element: <Suspense fallback={<Spinner />}><NoDuesRequests /></Suspense> },
+      { path: "/department/search", element: <Suspense fallback={<Spinner />}><SearchStudent /></Suspense> },
+      { path: "/department/new", element: <Suspense fallback={<Spinner />}><NewFine /></Suspense> },
+      { path: "/department/student/:studentID", element: <Suspense fallback={<Spinner />}><StudentDetail /></Suspense> },
     ],
   },
 ]);
