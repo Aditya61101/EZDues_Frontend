@@ -13,9 +13,11 @@ import { LogLevel } from "@azure/msal-browser";
 
 export const msalConfig = {
     auth: {
-        clientId: "Enter_the_Application_Id_Here", // TODO
-        authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here", // TODO
-        redirectUri: "http://localhost:3000",
+        clientId: "b46e9d78-e60d-4088-b89d-3bacc2699876",
+        authority: "https://login.microsoftonline.com/a57f7d92-038e-4d4c-8265-7cd2beb33b34",
+        /* This doesn't work, probably because of react-dom-router - pranjal */
+        //redirectUri: "http://localhost:5173/student",
+        postLogoutRedirectUri: "http://localhost:5173",
     },
     cache: {
         cacheLocation: "sessionStorage", // This configures where your cache will be stored
@@ -65,3 +67,4 @@ export const loginRequest = {
 export const graphConfig = {
     graphMeEndpoint: "https://graph.microsoft.com/v1.0/me",
 };
+/* vi: set et sw=4: */

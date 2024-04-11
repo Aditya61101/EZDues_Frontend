@@ -4,42 +4,22 @@ import images from "@/constants/images";
 import { Button } from "@/components/ui/button";
 import { UserRound, Lock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useMsal, useIsAuthenticated } from "@azure/msal-react";
 
 const StudentField = () => {
   const navigate = useNavigate();
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const form = new FormData(e.target);
-    console.log("pressed");
-    navigate("/student");
+
+  const { instance } = useMsal();
+  const initializeSignIn = () => {
+    navigate("/student"); /* TODO: think of a way to do this seamlessly - pranjal */
+    instance.loginRedirect();
   };
   return (
     <div className="flex flex-col mt-6 space-y-6">
-      <form onSubmit={handleLogin}>
-        <label className="text-gray-1000 text-[12px] font-normal md:text-[18px]">
-          Roll number
-        </label>
-        <div className="flex items-end mb-5">
-          <UserRound color="#5c5c5c" size={30} />
-          <input
-            className="border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
-            type="text"
-            name="username"
-          />
-        </div>
-        <label className="text-gray-1000 text-[12px] font-normal md:text-[18px]">
-          Password
-        </label>
-        <div className="flex items-end mb-2">
-          <Lock color="#5c5c5c" size={30} />
-          <input
-            className="border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
-            type="password"
-            name="password"
-          />
-        </div>
+      <form>
         <div className="flex md:justify-start justify center items-center mt-10">
           <Button
+            onClick={initializeSignIn}
             variant="ezDues"
             className=" lg:text-lg w-full md:w-2/5 rounded-md lg:py-6"
           >
@@ -265,3 +245,4 @@ const Login = () => {
 };
 
 export default Login;
+/* vi: set et sw=2: */

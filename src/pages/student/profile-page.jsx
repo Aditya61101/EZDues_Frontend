@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import images from "@/constants/images";
 import { CircleArrowRight, LogOut } from "lucide-react";
+import { useMsal } from "@azure/msal-react";
 
 const StudentProfile = () => {
+  const { accounts, instance } = useMsal();
   return (
     <>
       <nav>
@@ -37,16 +39,16 @@ const StudentProfile = () => {
           </div>
           <div className="flex flex-col items-center">
             <p className="font-medium text-black text-lg md:text-xl lg:text-3xl">
-              Hemant Kumar
+              {accounts[0]?.name}
             </p>
             <p className="lg:text-[25px]">2301CS20</p>
             <p className="lg:text-xl">B.Tech CSE</p>
             <p className="text-[14px] text-[#253d91] my-3">
-              hemant_2301CS20@iitp.ac.in
+              {accounts[0]?.username}
             </p>
-            <Link to={"/"} className="flex justify-center">
+            <button onClick={() => instance.logoutRedirect()} className="flex justify-center">
               <LogOut /> <p className="ml-2">Logout</p>
-            </Link>
+            </button>
           </div>
         </div>
         <div className="flex flex-col">
@@ -92,3 +94,4 @@ const StudentProfile = () => {
 };
 
 export default StudentProfile;
+/* vi: set et sw=2: */

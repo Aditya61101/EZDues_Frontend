@@ -6,6 +6,7 @@ import { Globe, Clock, CheckCheck } from "lucide-react";
 import Footer from "@/components/footer";
 // import Sidebar from "@/components/admin/sidebar";
 import ScrollToTopButton from "@/components/ScrollToTop";
+import { AuthenticatedTemplate, UnauthenticatedTemplate } from "@azure/msal-react";
 
 const HeroHeading = () => {
   return (
@@ -55,12 +56,22 @@ const LandingPage = () => {
                   >
                     About
                   </a>
-                  <Link
-                    to={"/login"}
-                    className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
-                  >
-                    Login
-                  </Link>
+                  <AuthenticatedTemplate>
+                    <Link
+                      to={"/student"}
+                      className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
+                    >
+                      Profile
+                    </Link>
+                  </AuthenticatedTemplate>
+                  <UnauthenticatedTemplate>
+                    <Link
+                      to={"/login"}
+                      className="text-black px-3 py-2 rounded-md text-md font-medium hover:bg-gray-200"
+                    >
+                      Login
+                    </Link>
+                  </UnauthenticatedTemplate>
                 </div>
                 {/* <Sidebar /> */}
               </div>
@@ -73,14 +84,26 @@ const LandingPage = () => {
           <div className="subheading text-gray-600 mt-5">
             The Hassle-Free Path to your No Dues Certificate
           </div>
-          <Link to={"/login"}>
-            <Button
-              variant="ezDues"
-              className="px-7 lg:px-14 lg:py-7 lg:text-2xl my-12"
-            >
-              Login
-            </Button>
-          </Link>
+          <AuthenticatedTemplate>
+            <Link to={"/student"}>
+              <Button
+                variant="ezDues"
+                className="px-7 lg:px-14 lg:py-7 lg:text-2xl my-12"
+              >
+                Profile
+              </Button>
+            </Link>
+          </AuthenticatedTemplate>
+          <UnauthenticatedTemplate>
+            <Link to={"/login"}>
+              <Button
+                variant="ezDues"
+                className="px-7 lg:px-14 lg:py-7 lg:text-2xl my-12"
+              >
+                Login
+              </Button>
+            </Link>
+          </UnauthenticatedTemplate>
         </div>
       </div>
       <section className="p-10 grid place-content-center h-max">
@@ -137,3 +160,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+/* vi: set et sw=2: */

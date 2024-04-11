@@ -28,6 +28,9 @@ const PaidFines = React.lazy(() => import("./pages/department/approve-paid"));
 const SearchStudent = React.lazy(() => import("./pages/department/search-student"));
 const NewFine = React.lazy(() => import("./pages/department/new-fine"));
 const StudentDetail = React.lazy(() => import("./pages/department/student-detail"));
+import { MsalProvider } from "@azure/msal-react";
+import { PublicClientApplication } from "@azure/msal-browser";
+import { msalConfig } from "./authConfig.js"
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -62,8 +65,13 @@ const router = createBrowserRouter([
   },
 ]);
 
+const msalInstance = new PublicClientApplication(msalConfig);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MsalProvider instance={msalInstance}>
+      <RouterProvider router={router} />
+    </MsalProvider>
   </React.StrictMode>
 );
+/* vi: set et sw=2: */
