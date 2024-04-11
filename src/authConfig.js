@@ -16,7 +16,7 @@ export const msalConfig = {
         clientId: "b46e9d78-e60d-4088-b89d-3bacc2699876",
         authority: "https://login.microsoftonline.com/a57f7d92-038e-4d4c-8265-7cd2beb33b34",
         /* This doesn't work, probably because of react-dom-router - pranjal */
-        //redirectUri: "http://localhost:5173/student",
+        redirectUri: "http://localhost:5173/student",
         postLogoutRedirectUri: "http://localhost:5173",
     },
     cache: {
