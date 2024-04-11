@@ -10,8 +10,12 @@ const Footer = () => {
           <h1 className="w-full text-white text-3xl font-medium">EZDues</h1>
           <h2 className="w-full text-gray-300 text-xl">Cassiopeia</h2>
           <div className="flex gap-3 justify-start items-center">
-            <img loading="lazy" src={images.IITPatna} alt="IIT Patna" className="h-14 mt-7"/>
-            <img loading="lazy" src={images.STC} alt="STC" className="h-14 mt-7" />
+            <a href="https://iitp.ac.in/" target="_blank">
+              <img loading="lazy" src={images.IITPatna} alt="IIT Patna" className="h-14 mt-7"/>
+            </a>
+            <a href="https://stc.iitp.ac.in/" target="_blank">
+              <img loading="lazy" src={images.STC} alt="STC" className="h-14 mt-7" />
+            </a>
           </div>
         </div>
         <div className="text-white flex flex-col justify-start items-start gap-y-2">
@@ -22,11 +26,11 @@ const Footer = () => {
             referrerPolicy="no-referrer"
             target="_blank"
           >
-            IIT patna Website
+            IIT Patna Website
           </a>
           <a
             className="text-slate-300 hover:underline"
-            href={"https://www.iitp.ac.in/gymkhana/"}
+            href={"https://iitp.ac.in/gymkhana/"}
             referrerPolicy="no-referrer"
             target="_blank"
           >
@@ -59,3 +63,4 @@ const Footer = () => {
 };
 
 export default Footer;
+/* vi: set et sw=2: */
