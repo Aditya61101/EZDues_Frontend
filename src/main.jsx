@@ -14,23 +14,38 @@ import Login from "./pages/loginPage/Login.jsx";
 import LandingPage from "./pages/landingPage/index.jsx";
 //Student-pages
 const StudentHome = React.lazy(() => import("./pages/student/home.jsx"));
-const StudentProfile = React.lazy(() => import("./pages/student/profile-page.jsx"));
+const StudentProfile = React.lazy(() =>
+  import("./pages/student/profile-page.jsx")
+);
 //Admin-pages
 const AdminDashboard = React.lazy(() => import("./pages/admin/dashboard"));
 const AdminStudents = React.lazy(() => import("./pages/admin/admin-students"));
-const AddDepartmentAdmin = React.lazy(() => import("./pages/admin/add-department"));
+const AddDepartmentAdmin = React.lazy(() =>
+  import("./pages/admin/add-department")
+);
 const CreateAdmin = React.lazy(() => import("./pages/admin/create-admin"));
-const CreateStudentAdmin = React.lazy(() => import("./pages/admin/add-students"));
+const CreateStudentAdmin = React.lazy(() =>
+  import("./pages/admin/add-students")
+);
 //Department Pages
-const DepartmentDashboard = React.lazy(() => import("./pages/department/dashboard"));
-const NoDuesRequests = React.lazy(() => import("./pages/department/no-dues-requests"));
+const DepartmentDashboard = React.lazy(() =>
+  import("./pages/department/dashboard")
+);
+const NoDuesRequests = React.lazy(() =>
+  import("./pages/department/no-dues-requests")
+);
 const PaidFines = React.lazy(() => import("./pages/department/approve-paid"));
-const SearchStudent = React.lazy(() => import("./pages/department/search-student"));
+const SearchStudent = React.lazy(() =>
+  import("./pages/department/search-student")
+);
 const NewFine = React.lazy(() => import("./pages/department/new-fine"));
-const StudentDetail = React.lazy(() => import("./pages/department/student-detail"));
+const StudentDetail = React.lazy(() =>
+  import("./pages/department/student-detail")
+);
+//Auth
 import { MsalProvider } from "@azure/msal-react";
 import { PublicClientApplication } from "@azure/msal-browser";
-import { msalConfig } from "./authConfig.js"
+import { msalConfig } from "./authConfig.js";
 
 const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
@@ -38,29 +53,29 @@ const router = createBrowserRouter([
   {
     element: <StudentLayout />,
     children: [
-      { path: "/student", element: <Suspense fallback={<Spinner />}><StudentHome /></Suspense> },
-      { path: "/student/profile", element: <Suspense fallback={<Spinner />}><StudentProfile /></Suspense> },
+      { path: "/student", element: <StudentHome /> },
+      { path: "/student/profile", element: <StudentProfile /> },
     ],
   },
   {
     element: <AdminLayout />,
     children: [
-      { path: "/admin", element: <Suspense fallback={<Spinner />}><AdminDashboard /></Suspense> },
-      { path: "/admin/admin-students", element: <Suspense fallback={<Spinner />}><AdminStudents /></Suspense> },
-      { path: "/admin/add-department", element: <Suspense fallback={<Spinner />}><AddDepartmentAdmin /></Suspense> },
-      { path: "/admin/create-admin", element: <Suspense fallback={<Spinner />}><CreateAdmin /></Suspense> },
-      { path: "/admin/add-student", element: <Suspense fallback={<Spinner />}><CreateStudentAdmin /></Suspense> },
+      { path: "/admin", element: <AdminDashboard /> },
+      { path: "/admin/admin-students", element: <AdminStudents /> },
+      { path: "/admin/add-department", element: <AddDepartmentAdmin /> },
+      { path: "/admin/create-admin", element: <CreateAdmin /> },
+      { path: "/admin/add-student", element: <CreateStudentAdmin /> },
     ],
   },
   {
     element: <DepartmentLayout />,
     children: [
-      { path: "/department", element: <Suspense fallback={<Spinner />}><DepartmentDashboard /></Suspense> },
-      { path: "/department/paid-fines", element: <Suspense fallback={<Spinner />}><PaidFines /></Suspense> },
-      { path: "/department/no-dues", element: <Suspense fallback={<Spinner />}><NoDuesRequests /></Suspense> },
-      { path: "/department/search", element: <Suspense fallback={<Spinner />}><SearchStudent /></Suspense> },
-      { path: "/department/new", element: <Suspense fallback={<Spinner />}><NewFine /></Suspense> },
-      { path: "/department/student/:studentID", element: <Suspense fallback={<Spinner />}><StudentDetail /></Suspense> },
+      { path: "/department", element: <DepartmentDashboard /> },
+      { path: "/department/paid-fines", element: <PaidFines /> },
+      { path: "/department/no-dues", element: <NoDuesRequests /> },
+      { path: "/department/search", element: <SearchStudent /> },
+      { path: "/department/new", element: <NewFine /> },
+      { path: "/department/student/:studentID", element: <StudentDetail /> },
     ],
   },
 ]);
@@ -70,7 +85,9 @@ const msalInstance = new PublicClientApplication(msalConfig);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <MsalProvider instance={msalInstance}>
-      <RouterProvider router={router} />
+      <Suspense fallback={<Spinner />}>
+        <RouterProvider router={router} />
+      </Suspense>
     </MsalProvider>
   </React.StrictMode>
 );

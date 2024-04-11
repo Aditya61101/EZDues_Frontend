@@ -4,14 +4,13 @@ import images from "@/constants/images";
 import { Button } from "@/components/ui/button";
 import { UserRound, Lock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useMsal, useIsAuthenticated } from "@azure/msal-react";
+import { useMsal } from "@azure/msal-react";
 
 const StudentField = () => {
   const navigate = useNavigate();
-
   const { instance } = useMsal();
   const initializeSignIn = () => {
-    navigate("/student"); /* TODO: think of a way to do this seamlessly - pranjal */
+    navigate("/student");
     instance.loginRedirect();
   };
   return (
@@ -21,9 +20,9 @@ const StudentField = () => {
           <Button
             onClick={initializeSignIn}
             variant="ezDues"
-            className=" lg:text-lg w-full md:w-2/5 rounded-md lg:py-6"
+            className=" lg:text-lg w-full rounded-md lg:py-6"
           >
-            Login
+            Login with Outlook
           </Button>
         </div>
       </form>

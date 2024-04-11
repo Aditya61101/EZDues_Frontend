@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import { Filter } from "lucide-react";
 import StudentCard from "@/components/student/card.jsx";
@@ -6,8 +6,18 @@ import StudentNavbar from "@/components/student/navbar";
 import { Button } from "@/components/ui/button";
 import Form from "react-bootstrap/Form";
 import { Search } from "lucide-react";
+import { useIsAuthenticated } from "@azure/msal-react";
+import { useNavigate } from "react-router-dom";
 
 const StudentHome = () => {
+  const navigate = useNavigate();
+  const isAuthenticated = useIsAuthenticated();
+  console.log(isAuthenticated);
+  // useEffect(() => {
+  //   if (!isAuthenticated) {
+  //     navigate("/login");
+  //   }
+  // }, [isAuthenticated]);
   const studentData = [
     { dept: "Department of CSE", status: "Initiate Request" },
     { dept: "Department of EEE", status: "Initiate Request" },
