@@ -5,13 +5,16 @@ import { Button } from "@/components/ui/button";
 import { UserRound, Lock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useMsal, useIsAuthenticated } from "@azure/msal-react";
+import axios from "axios";
 
 const StudentField = () => {
   const navigate = useNavigate();
 
   const { instance } = useMsal();
   const initializeSignIn = () => {
-    navigate("/student"); /* TODO: think of a way to do this seamlessly - pranjal */
+    navigate(
+      "/student"
+    ); /* TODO: think of a way to do this seamlessly - pranjal */
     instance.loginRedirect();
   };
   return (
@@ -33,11 +36,30 @@ const StudentField = () => {
 
 const DeptField = () => {
   const navigate = useNavigate();
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    const form = new FormData(e.target);
-    console.log("pressed");
-    navigate("/department");
+    console.log(
+      JSON.stringify({
+        deptName: e.target["department-name"].value,
+        username: e.target["username"].value,
+        password: e.target["password"].value,
+      })
+    );
+    const response = await fetch("http://localhost:5000/department/login", {
+      // mode: "no-cors",
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify({
+        deptName: e.target["department-name"].value,
+        username: e.target["username"].value,
+        password: e.target["password"].value,
+      }),
+    });
+
+    if (response.status == 200) {
+      navigate("/department");
+    }
   };
   return (
     <div className="flex flex-col mt-6 space-y-6">
