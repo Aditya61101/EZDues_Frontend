@@ -5,11 +5,9 @@ import { Button } from "@/components/ui/button";
 import { UserRound, Lock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useMsal, useIsAuthenticated } from "@azure/msal-react";
-import axios from "axios";
 
 const StudentField = () => {
   const navigate = useNavigate();
-
   const { instance } = useMsal();
   const initializeSignIn = () => {
     instance.loginRedirect();
