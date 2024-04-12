@@ -15,7 +15,7 @@ const StudentNavbar = () => {
         className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-blue-200"
       >
         <p className="text-3xl text-[#6d718b]">
-          {accounts[0].username[0].toUpperCase()}
+          {accounts[0]?.username[0]?.toUpperCase()}
         </p>
       </Link>
     </nav>
