@@ -6,14 +6,24 @@ import { Globe, Clock, CheckCheck } from "lucide-react";
 import Footer from "@/components/footer";
 // import Sidebar from "@/components/admin/sidebar";
 import ScrollToTopButton from "@/components/ScrollToTop";
-import { AuthenticatedTemplate, UnauthenticatedTemplate } from "@azure/msal-react";
+import {
+  AuthenticatedTemplate,
+  UnauthenticatedTemplate,
+} from "@azure/msal-react";
 
 const HeroHeading = () => {
   return (
     <div className="heading">
-      <div className="largest">No Dues</div>
-      <div className="middle">With</div>
-      <div className="largest bottom">
+      <div className="largest wipe-in" style={{ animationDelay: "100ms" }}>
+        No Dues
+      </div>
+      <div className="middle wipe-in" style={{ animationDelay: "400ms" }}>
+        With
+      </div>
+      <div
+        className="largest bottom wipe-in"
+        style={{ animationDelay: "500ms" }}
+      >
         No <span className=" text-[#538FF8]">Worries</span>
       </div>
     </div>
@@ -81,14 +91,18 @@ const LandingPage = () => {
 
         <div className="main w-full flex justify-center items-center flex-col h-screen mt-[-64px]">
           <HeroHeading />
-          <div className="subheading text-gray-600 mt-5">
+          <div
+            className="subheading text-gray-600 mt-5 fade-in"
+            style={{ animationDelay: "800ms" }}
+          >
             The Hassle-Free Path to your No Dues Certificate
           </div>
           <AuthenticatedTemplate>
             <Link to={"/student"}>
               <Button
                 variant="ezDues"
-                className="px-7 lg:px-14 lg:py-7 lg:text-2xl my-12"
+                className="px-7 lg:px-14 lg:py-7 lg:text-2xl my-12 fade-in"
+                style={{ animationDelay: "900ms" }}
               >
                 Go to your Student Profile
               </Button>
@@ -98,7 +112,8 @@ const LandingPage = () => {
             <Link to={"/login"}>
               <Button
                 variant="ezDues"
-                className="px-7 lg:px-14 lg:py-7 lg:text-2xl my-12"
+                className="px-7 lg:px-14 lg:py-7 lg:text-2xl my-12 fade-in"
+                style={{ animationDelay: "900ms" }}
               >
                 Login
               </Button>
@@ -140,13 +155,14 @@ const LandingPage = () => {
             About
           </p>
           <p className="md:text-lg leading-8 text-[#525971] text-justify">
-            EZDues is a &quot;No Dues Portal&quot; which would serve as a centralized
-            platform for students to clear any pending dues or obligations to
-            the college before graduation. This eliminates the need for students
-            to navigate through multiple departments or offices to obtain
-            clearances, saving time and reducing administrative bottlenecks. The
-            introduction of a &quot;No Dues Portal&quot; is a step towards digitizing the
-            administrative processes within IIT Patna.
+            EZDues is a &quot;No Dues Portal&quot; which would serve as a
+            centralized platform for students to clear any pending dues or
+            obligations to the college before graduation. This eliminates the
+            need for students to navigate through multiple departments or
+            offices to obtain clearances, saving time and reducing
+            administrative bottlenecks. The introduction of a &quot;No Dues
+            Portal&quot; is a step towards digitizing the administrative
+            processes within IIT Patna.
           </p>
         </div>
         <div>
