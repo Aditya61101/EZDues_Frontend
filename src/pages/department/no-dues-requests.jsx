@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Search, CheckCheck } from "lucide-react";
 import images from "@/constants/images";
 import { Switch } from "@/components/ui/switch";

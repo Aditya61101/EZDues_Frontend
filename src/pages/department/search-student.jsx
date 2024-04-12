@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Search } from "lucide-react";
 import images from "@/constants/images";
 import { Button } from "@/components/ui/button";
@@ -89,10 +89,13 @@ const SearchStudent = () => {
   };
 
   const detailHandler = (event) => {
+    console.log(event);
     // Handle details click
   };
 
-  const addFineHandler = (event) => {};
+  const addFineHandler = (event) => {
+    console.log(event);
+  };
 
   return (
     <>

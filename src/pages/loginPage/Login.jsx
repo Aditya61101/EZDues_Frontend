@@ -4,7 +4,7 @@ import images from "@/constants/images";
 import { Button } from "@/components/ui/button";
 import { UserRound, Lock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useMsal, useIsAuthenticated } from "@azure/msal-react";
+import { useMsal } from "@azure/msal-react";
 
 const StudentField = () => {
   const navigate = useNavigate();
@@ -126,7 +126,7 @@ const AdminField = () => {
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
-    const form = new FormData(e.target);
+    // const form = new FormData(e.target);
     console.log("pressed");
     navigate("/admin");
   };

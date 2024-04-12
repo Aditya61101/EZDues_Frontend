@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Search, CheckCheck } from "lucide-react";
 
 import images from "@/constants/images";
@@ -84,12 +84,15 @@ const PaidFines = () => {
 
   const detailHandler = (event) => {
     //using api to fetch and view the details of fines
+    console.log(event);
   };
   const approveHandler = (event) => {
     //using api to add fines
+    console.log(event);
   };
   const paymentProofHandler = (event) => {
     //using api to add fines
+    console.log(event);
   };
   return (
     <>
