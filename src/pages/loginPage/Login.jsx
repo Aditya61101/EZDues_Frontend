@@ -12,21 +12,35 @@ const StudentField = () => {
 
   const { instance } = useMsal();
   const initializeSignIn = () => {
-    navigate(
-      "/student"
-    ); /* TODO: think of a way to do this seamlessly - pranjal */
     instance.loginRedirect();
+    navigate("/student");
   };
   return (
     <div className="flex flex-col mt-6 space-y-6">
       <form>
-        <div className="flex md:justify-start justify center items-center mt-10">
+        <div className="w-full flex justify-center justify center items-center mt-10">
           <Button
             onClick={initializeSignIn}
-            variant="ezDues"
-            className=" lg:text-lg w-full md:w-2/5 rounded-md lg:py-6"
+            style={{
+              fontFamily: "Segoe UI Regular",
+              fontSize: "15px",
+              borderRadius: "0",
+              fontWeight: "600",
+              background: "#2f2f2f",
+              color: "#FFF",
+              // border: "1px solid #8C8C8C",
+              height: "41px",
+              lineHeight: "41px",
+              paddingLeft: "12px",
+              paddingRight: "12px",
+            }}
           >
-            Login
+            <img
+              src={images.MSLogo}
+              style={{ width: "20px", height: "20px", marginRight: "12px" }}
+              alt="Microsoft"
+            />
+            Sign In with Microsoft
           </Button>
         </div>
       </form>
