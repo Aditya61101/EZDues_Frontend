@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import images from "@/constants/images";
 import { CircleArrowRight, LogOut } from "lucide-react";
 import { useMsal } from "@azure/msal-react";
-import Spinner from "@/components/spinner";
 
 //TODO: extend this to more branches
 const Branch = {
@@ -14,10 +13,9 @@ const Branch = {
   cb: "CBE",
 };
 const StudentProfile = () => {
-  const { accounts, instance, inProgress } = useMsal();
-  if (inProgress === "logout") return <Spinner />;
+  const { accounts, instance } = useMsal();
   const rollno = accounts[0]?.username.match(/(\d{4}[a-zA-Z]{2}\d{2})/)[0];
-  const branch = rollno.match(/[a-zA-Z]+/)[0];
+  const branch = rollno?.match(/[a-zA-Z]+/)[0];
   return (
     <>
       <nav>
@@ -48,7 +46,9 @@ const StudentProfile = () => {
       <div className="flex flex-wrap items-center lg:justify-center max-[768px]:justify-center w-screen bg-white text-black font-heading mt-10 gap-x-10">
         <div className="flex flex-col items-center rounded-[45px] px-10 py-7 lg:px-20 lg:py-14 text-[#6d718b] bg-[#f4f4f7]">
           <div className="mb-5 w-24 h-24 flex items-center justify-center rounded-full border-2 border-blue-200">
-            <p className="text-5xl">{accounts[0].username[0].toUpperCase()}</p>
+            <p className="text-5xl">
+              {accounts[0]?.username[0]?.toUpperCase()}
+            </p>
           </div>
           <div className="flex flex-col items-center">
             <p className="font-medium text-black text-lg md:text-xl lg:text-3xl">
