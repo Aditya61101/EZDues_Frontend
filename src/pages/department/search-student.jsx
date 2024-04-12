@@ -131,8 +131,7 @@ const SearchStudent = () => {
           {currentStudents.map((studentDetail, index) => (
             <div
               key={index}
-              className="w-full p-2 h-auto md:h-[107px] rounded-[20px] flex flex-row bg-[#fff] justify-between pt-5 flex-wrap"
-              style={{ marginBottom: "0.5rem" }}
+              className="w-full p-5 h-auto rounded-[20px] flex flex-col lg:flex-row bg-[#fff] justify-between flex-wrap mb-2"
             >
               <div className="flex flex-row justify-start items-center basis-1/3">
                 <img
@@ -157,14 +156,15 @@ const SearchStudent = () => {
               </div>
               <div className="flex flex-row justify-center items-center md:basis-1/3 basis-1">
                 <Button
-                  className={`${"bg-[#f9f9f9] text-[#3d3d3d] hover:text-[#538ff8] hover:bg-[#538ff81f]"}  w-auto md:w-1/2 w-auto h-3/5 mb-2 md:mb-0 flex-1 shrink text-[12px] md:text-[20px] font-light mr-2 md:mr-4`}
+                  className={`${"bg-white text-[#538ff8] hover:text-[#538ff8] hover:bg-[#538ff81f]"} md:mb-0 flex-1 lg:text-lg font-light mr-2 md:mr-4 py-5`}
+                  style={{ border: "1px solid #538ff8" }}
                   onClick={detailHandler}
                 >
                   Details
                 </Button>
                 <Button
                   variant="ezDues"
-                  className=" lg:text-lg w-auto md:w-1/2 h-3/5 rounded-md lg:py-6"
+                  className=" lg:text-lg w-auto md:w-1/2 rounded-md lg:py-6 flex-1 py-5"
                   onClick={addFineHandler}
                 >
                   + Add Fine

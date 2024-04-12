@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Search } from "lucide-react";
+import { Search, CheckCheck } from "lucide-react";
 import images from "@/constants/images";
 import { Switch } from "@/components/ui/switch";
 
@@ -145,7 +145,7 @@ const NoDuesRequests = () => {
           {currentStudents.map((studentDetail, index) => (
             <div
               key={index}
-              className="w-full p-2 h-auto md:h-[107px] rounded-[20px] flex flex-row bg-[#fff]  pt-5 flex-wrap"
+              className="w-full p-2 px-5 h-auto md:min-h-[107px] rounded-[20px] flex flex-col lg:flex-row bg-[#fff] flex-wrap"
               style={{ marginBottom: "0.5rem" }}
             >
               <div className="flex flex-row justify-start items-center md:basis-1/3 ">
@@ -168,14 +168,14 @@ const NoDuesRequests = () => {
                 </div>
                 <div>{studentDetail.pendingDues ? <Pending /> : <Clear />}</div>
               </div>
-              <div className="flex flex-row justify-end items-center md:basis-1/3">
+              <div className="w-full md:w-auto flex flex-row justify-end items-center md:basis-1/3">
                 <button
-                  className="flex md:w-[264px] w-full md:h-[55px] h-2/3 px-[33px] py-[17px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[10px] bg-[#2bc9ac] text-white"
+                  className="flex md:w-[264px] w-full md:h-[55px] h-2/3 px-[33px] py-2 md:py-5 my-5 md:my-1 justify-center items-center gap-[10px] flex-shrink-0 rounded-[10px] bg-[#2bc9ac] text-white"
                   onClick={() => {
                     /* add onclick functionality here */
                   }}
                 >
-                  ✓✓ Approve No Dues
+                  <CheckCheck /> Approve No Dues
                 </button>
               </div>
             </div>
