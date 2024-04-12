@@ -57,20 +57,26 @@ const DeptField = () => {
     //     password: e.target["password"].value,
     //   })
     // );
-    const response = await fetch("http://localhost:5000/department/login", {
-      // mode: "no-cors",
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({
-        deptName: e.target["department-name"].value,
-        username: e.target["username"].value,
-        password: e.target["password"].value,
-      }),
-    });
-
-    if (response.status == 200) {
-      navigate("/department");
+    try {
+      const response = await fetch("http://localhost:5000/department/login", {
+        // mode: "no-cors",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          deptName: e.target["department-name"].value,
+          username: e.target["username"].value,
+          password: e.target["password"].value,
+        }),
+      });
+      console.log(response);
+      if (response.status == 200) {
+        navigate("/department");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error while getting data! Please try again later.");
+      return <>{"ERROR! Please try later"}</>;
     }
   };
   return (
@@ -127,19 +133,25 @@ const AdminField = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     // const form = new FormData(e.target);
-    const response = await fetch("http://localhost:5000/admin/login", {
-      // mode: "no-cors",
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({
-        username: e.target["username"].value,
-        password: e.target["password"].value,
-      }),
-    });
+    try {
+      const response = await fetch("http://localhost:5000/admin/login", {
+        // mode: "no-cors",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          username: e.target["username"].value,
+          password: e.target["password"].value,
+        }),
+      });
 
-    if (response.status == 200) {
-      navigate("/admin");
+      if (response.status == 200) {
+        navigate("/admin");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error while getting data! Please try again later.");
+      return <>{"ERROR! Please try later"}</>;
     }
   };
   return (

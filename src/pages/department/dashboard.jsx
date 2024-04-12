@@ -55,42 +55,50 @@ const DepartmentDashboard = () => {
   let [finesData, setFinesData] = useState({});
   let [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/department/get-fines", {
-      method: "GET",
-      credentials: "include",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setLoaded(true);
-        data.unsettledFine = data.totalFine - data.settledFine;
-        data;
-        data.settledFinePercent = data.totalFine
-          ? ((data.settledFine / data.totalFine) * 100).toFixed(2)
-          : 100;
-        data.unsettledNumberOfFines =
-          data.numberOfFines - data.settledNumberOfFines;
-        data.unsettledFinePercent = 100 - data.settledFinePercent;
-        data.settledNumberPercent = data.numberOfFines
-          ? ((data.settledNumberOfFines / data.numberOfFines) * 100).toFixed(2)
-          : 100;
-        data.unsettledNumberPercent = 100 - data.settledNumberPercent;
+    try {
+      fetch("http://localhost:5000/department/get-fines", {
+        method: "GET",
+        credentials: "include",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setLoaded(true);
+          data.unsettledFine = data.totalFine - data.settledFine;
+          data;
+          data.settledFinePercent = data.totalFine
+            ? ((data.settledFine / data.totalFine) * 100).toFixed(2)
+            : 100;
+          data.unsettledNumberOfFines =
+            data.numberOfFines - data.settledNumberOfFines;
+          data.unsettledFinePercent = 100 - data.settledFinePercent;
+          data.settledNumberPercent = data.numberOfFines
+            ? ((data.settledNumberOfFines / data.numberOfFines) * 100).toFixed(
+                2
+              )
+            : 100;
+          data.unsettledNumberPercent = 100 - data.settledNumberPercent;
 
-        setFinesData({
-          totalFine: data.totalFine,
-          settledFine: data.settledFine,
-          unsettledFine: data.unsettledFine,
-          numberOfFines: data.numberOfFines,
-          settledNumberOfFines: data.settledNumberOfFines,
-          unsettledNumberOfFines: data.unsettledNumberOfFines,
-          settledFinePercent: data.settledFinePercent,
-          settledNumberPercent: data.settledNumberPercent,
-          unsettledFinePercent: data.unsettledFinePercent,
-          unsettledNumberPercent: data.unsettledNumberPercent,
-          pendingNoDues: data.pendingNoDues,
-          pendingFines: data.pendingFines,
+          setFinesData({
+            totalFine: data.totalFine,
+            settledFine: data.settledFine,
+            unsettledFine: data.unsettledFine,
+            numberOfFines: data.numberOfFines,
+            settledNumberOfFines: data.settledNumberOfFines,
+            unsettledNumberOfFines: data.unsettledNumberOfFines,
+            settledFinePercent: data.settledFinePercent,
+            settledNumberPercent: data.settledNumberPercent,
+            unsettledFinePercent: data.unsettledFinePercent,
+            unsettledNumberPercent: data.unsettledNumberPercent,
+            pendingNoDues: data.pendingNoDues,
+            pendingFines: data.pendingFines,
+          });
+          console.log(finesData);
         });
-        console.log(finesData);
-      });
+    } catch (err) {
+      console.error(err);
+      alert("Error fetching data. Please Try Again Later");
+      return <>{"ERROR! Please try again later"}</>;
+    }
   }, [loaded]);
 
   return (
