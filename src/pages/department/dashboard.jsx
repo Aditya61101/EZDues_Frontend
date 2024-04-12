@@ -64,14 +64,15 @@ const DepartmentDashboard = () => {
         setLoaded(true);
         data.unsettledFine = data.totalFine - data.settledFine;
         data;
-        data.settledFinePercent =
-          ((data.settledFine / data.totalFine) * 100).toFixed(2) || 0;
+        data.settledFinePercent = data.totalFine
+          ? ((data.settledFine / data.totalFine) * 100).toFixed(2)
+          : 100;
         data.unsettledNumberOfFines =
           data.numberOfFines - data.settledNumberOfFines;
         data.unsettledFinePercent = 100 - data.settledFinePercent;
-        data.settledNumberPercent =
-          ((data.settledNumberOfFines / data.numberOfFines) * 100).toFixed(2) ||
-          0;
+        data.settledNumberPercent = data.numberOfFines
+          ? ((data.settledNumberOfFines / data.numberOfFines) * 100).toFixed(2)
+          : 100;
         data.unsettledNumberPercent = 100 - data.settledNumberPercent;
 
         setFinesData({

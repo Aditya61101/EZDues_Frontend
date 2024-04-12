@@ -14,6 +14,20 @@ const Branch = {
 };
 const StudentProfile = () => {
   const { accounts, instance } = useMsal();
+  const accessTokenRequest = {
+    account: accounts[0],
+  };
+  instance
+    .acquireTokenSilent(accessTokenRequest)
+    .then((res) => {
+      fetch("http://localhost:5000/student/fines", {
+        method: "GET",
+        headers: { "X-EZDues-IDToken": res.idToken },
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    })
+    .catch((err) => console.log("DEBUG:", err));
   const rollno = accounts[0]?.username.match(/(\d{4}[a-zA-Z]{2}\d{2})/)[0];
   const branch = rollno?.match(/[a-zA-Z]+/)[0];
   return (
