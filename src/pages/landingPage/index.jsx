@@ -90,7 +90,7 @@ const LandingPage = () => {
                 variant="ezDues"
                 className="px-7 lg:px-14 lg:py-7 lg:text-2xl my-12"
               >
-                Profile
+                Go to your Student Profile
               </Button>
             </Link>
           </AuthenticatedTemplate>
@@ -140,12 +140,12 @@ const LandingPage = () => {
             About
           </p>
           <p className="md:text-lg leading-8 text-[#525971] text-justify">
-            EZDues is a "No Dues Portal" which would serve as a centralized
+            EZDues is a &quot;No Dues Portal&quot; which would serve as a centralized
             platform for students to clear any pending dues or obligations to
             the college before graduation. This eliminates the need for students
             to navigate through multiple departments or offices to obtain
             clearances, saving time and reducing administrative bottlenecks. The
-            introduction of a "No Dues Portal" is a step towards digitizing the
+            introduction of a &quot;No Dues Portal&quot; is a step towards digitizing the
             administrative processes within IIT Patna.
           </p>
         </div>

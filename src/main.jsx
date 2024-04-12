@@ -8,48 +8,38 @@ import Spinner from "./components/spinner";
 import { StudentLayout } from "./layouts/student-layout.jsx";
 import { AdminLayout } from "./layouts/admin-layout";
 import { DepartmentLayout } from "./layouts/department-layout";
-//Login page
-import Login from "./pages/loginPage/Login.jsx";
-//LandingPage
-import LandingPage from "./pages/landingPage/index.jsx";
-//Student-pages
-const StudentHome = React.lazy(() => import("./pages/student/home.jsx"));
-const StudentProfile = React.lazy(() =>
-  import("./pages/student/profile-page.jsx")
-);
-//Admin-pages
-const AdminDashboard = React.lazy(() => import("./pages/admin/dashboard"));
-const AdminStudents = React.lazy(() => import("./pages/admin/admin-students"));
-const AddDepartmentAdmin = React.lazy(() =>
-  import("./pages/admin/add-department")
-);
-const CreateAdmin = React.lazy(() => import("./pages/admin/create-admin"));
-const CreateStudentAdmin = React.lazy(() =>
-  import("./pages/admin/add-students")
-);
-//Department Pages
-const DepartmentDashboard = React.lazy(() =>
-  import("./pages/department/dashboard")
-);
-const NoDuesRequests = React.lazy(() =>
-  import("./pages/department/no-dues-requests")
-);
-const PaidFines = React.lazy(() => import("./pages/department/approve-paid"));
-const SearchStudent = React.lazy(() =>
-  import("./pages/department/search-student")
-);
-const NewFine = React.lazy(() => import("./pages/department/new-fine"));
-const StudentDetail = React.lazy(() =>
-  import("./pages/department/student-detail")
-);
+//Pages
+import {
+  AddDepartmentAdmin,
+  AdminDashboard,
+  AdminStudents,
+  CreateAdmin,
+  CreateStudentAdmin,
+  DepartmentDashboard,
+  LandingPage,
+  Login,
+  NewFine,
+  NoDuesRequests,
+  PaidFines,
+  SearchStudent,
+  StudentDetail,
+  StudentHome,
+  StudentProfile,
+} from "./pages/index.js";
 //Auth
 import { MsalProvider } from "@azure/msal-react";
 import { PublicClientApplication } from "@azure/msal-browser";
 import { msalConfig } from "./authConfig.js";
 
 const router = createBrowserRouter([
-  { path: "/", element: <LandingPage /> },
-  { path: "/login", element: <Login /> },
+  {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
   {
     element: <StudentLayout />,
     children: [
