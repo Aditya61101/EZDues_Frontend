@@ -141,7 +141,7 @@ const NoDuesRequests = () => {
             ))}
           </ul>
         </div>
-        <div className="w-full h-4/5 flex-col flex-wrap">
+        <div className="w-full pb-5 flex-col flex-wrap">
           {currentStudents.map((studentDetail, index) => (
             <div
               key={index}

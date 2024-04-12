@@ -127,7 +127,7 @@ const SearchStudent = () => {
             ))}
           </ul>
         </div>
-        <div className="w-full h-4/5 flex-col flex-wrap">
+        <div className="w-full flex-col flex-wrap pb-5">
           {currentStudents.map((studentDetail, index) => (
             <div
               key={index}

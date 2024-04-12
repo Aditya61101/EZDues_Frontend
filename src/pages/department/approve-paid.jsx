@@ -6,20 +6,22 @@ import { Button } from "@/components/ui/button";
 
 const PaidFines = () => {
   const [searchStudent, setSearchStudent] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [studentsPerPage] = useState(5);
+  const [filteredStudents, setFilteredStudents] = useState([]);
 
   const handleSearch = (event) => {
-    event.preventDefault();
-    //searching in the DB - TODO
+    const value = event.target.value;
+    setSearchStudent(value);
+    setCurrentPage(1);
+    const results = studentDetails.filter(
+      (student) =>
+        student.name.toLowerCase().includes(value.toLowerCase()) ||
+        student.roll.toLowerCase().includes(value.toLowerCase())
+    );
+    setFilteredStudents(results);
   };
 
-  const handleChange = (event) => {
-    setSearchStudent(event.target.value);
-  };
-  const handleKeyPress = (event) => {
-    if (event.key == "Enter") {
-      handleSearch(event);
-    }
-  };
   const studentDetails = [
     {
       name: "Hemant Kumar",
@@ -32,8 +34,13 @@ const PaidFines = () => {
       fineAmount: 1000,
     },
     {
-      name: "Hemant Kumar",
-      roll: "2301CS20",
+      name: "Kushal Agarwal",
+      roll: "2201MC22",
+      fineAmount: 1000,
+    },
+    {
+      name: "Himanshu",
+      roll: "2201MC18",
       fineAmount: 1000,
     },
     {
@@ -42,41 +49,38 @@ const PaidFines = () => {
       fineAmount: 1000,
     },
     {
-      name: "Hemant Kumar",
-      roll: "2301CS20",
+      name: "Bibhuti Jha",
+      roll: "2301AI37",
       fineAmount: 1000,
     },
     {
-      name: "Hemant Kumar",
-      roll: "2301CS20",
+      name: "Kushal Agarwal",
+      roll: "2201MC22",
       fineAmount: 1000,
     },
     {
-      name: "Hemant Kumar",
-      roll: "2301CS20",
-      fineAmount: 1000,
-    },
-    {
-      name: "Hemant Kumar",
-      roll: "2301CS20",
-      fineAmount: 1000,
-    },
-    {
-      name: "Hemant Kumar",
-      roll: "2301CS20",
-      fineAmount: 1000,
-    },
-    {
-      name: "Hemant Kumar",
-      roll: "2301CS20",
-      fineAmount: 1000,
-    },
-    {
-      name: "Hemant Kumar",
-      roll: "2301CS20",
+      name: "Himanshu",
+      roll: "2201MC18",
       fineAmount: 1000,
     },
   ];
+
+  const studentsToDisplay = searchStudent ? filteredStudents : studentDetails;
+  const indexOfLastStudent = currentPage * studentsPerPage;
+  const indexOfFirstStudent = indexOfLastStudent - studentsPerPage;
+  const currentStudents = studentsToDisplay.slice(
+    indexOfFirstStudent,
+    indexOfLastStudent
+  );
+
+  const pageNumbers = [];
+  for (
+    let i = 1;
+    i <= Math.ceil(studentsToDisplay.length / studentsPerPage);
+    i++
+  ) {
+    pageNumbers.push(i);
+  }
 
   const detailHandler = (event) => {
     //using api to fetch and view the details of fines
@@ -102,14 +106,30 @@ const PaidFines = () => {
                 type="text"
                 placeholder="Search..."
                 value={searchStudent}
-                onChange={handleChange}
-                onKeyDown={handleKeyPress}
+                onChange={handleSearch}
+                // onKeyDown={handleKeyPress}
               />
             </form>
           </div>
         </div>
-        <div className="w-full h-4/5 flex-col flex-wrap">
-          {studentDetails.map((studentDetail, index) => (
+        <div className="flex justify-center mt-4 mb-4">
+          <ul className="flex">
+            {pageNumbers.map((number) => (
+              <li key={number}>
+                <button
+                  className={`mr-1 border px-1 py-1 ${
+                    currentPage === number ? "text-red-500" : ""
+                  }`}
+                  onClick={() => setCurrentPage(number)}
+                >
+                  {number}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="w-full flex-col flex-wrap pb-5">
+          {currentStudents.map((studentDetail, index) => (
             <div
               key={index}
               className="w-full p-7 h-auto rounded-[20px] flex flex-col lg:flex-row bg-[#fff] justify-between flex-wrap mb-5"
