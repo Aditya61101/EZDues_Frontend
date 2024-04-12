@@ -71,6 +71,32 @@ section {
   padding-top: 7rem !important;
   padding-bottom: 10rem !important;
 }
+.wipe-in {
+  height: 1.2em;
+  overflow: hidden;
+  animation: wipe-in 1s ease-in-out backwards;
+}
+.fade-in {
+  animation: fade-in 1s ease-in-out backwards;
+}
+@keyframes wipe-in {
+  0% {
+    padding-top: 1.2em;
+  }
+  100% {
+    padding-top: 0;
+  }
+}
+@keyframes fade-in {
+  0% {
+    transform: translateY(1.2em);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
 @media (max-width: 500px) {
   .heading {
     display: flex;

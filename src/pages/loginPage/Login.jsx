@@ -10,19 +10,35 @@ const StudentField = () => {
   const navigate = useNavigate();
   const { instance } = useMsal();
   const initializeSignIn = () => {
-    navigate("/student");
     instance.loginRedirect();
+    navigate("/student");
   };
   return (
-    <div className="flex flex-col mt-6 space-y-6">
+    <div className="flex flex-col mt-6 space-y-6 pb-20">
       <form>
-        <div className="flex md:justify-start justify center items-center mt-10">
+        <div className="w-full flex justify-center justify center items-center mt-10">
           <Button
             onClick={initializeSignIn}
-            variant="ezDues"
-            className=" lg:text-lg w-full rounded-md lg:py-6"
+            style={{
+              fontFamily: "Segoe UI Regular",
+              fontSize: "15px",
+              borderRadius: "0",
+              fontWeight: "600",
+              background: "#2f2f2f",
+              color: "#FFF",
+              // border: "1px solid #8C8C8C",
+              height: "41px",
+              lineHeight: "41px",
+              paddingLeft: "12px",
+              paddingRight: "12px",
+            }}
           >
-            Login with Outlook
+            <img
+              src={images.MSLogo}
+              style={{ width: "20px", height: "20px", marginRight: "12px" }}
+              alt="Microsoft"
+            />
+            Sign In with Microsoft
           </Button>
         </div>
       </form>
@@ -32,22 +48,47 @@ const StudentField = () => {
 
 const DeptField = () => {
   const navigate = useNavigate();
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    const form = new FormData(e.target);
-    console.log("pressed");
-    navigate("/department");
+    // console.log(
+    //   JSON.stringify({
+    //     deptName: e.target["department-name"].value,
+    //     username: e.target["username"].value,
+    //     password: e.target["password"].value,
+    //   })
+    // );
+    try {
+      const response = await fetch("http://localhost:5000/department/login", {
+        // mode: "no-cors",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          deptName: e.target["department-name"].value,
+          username: e.target["username"].value,
+          password: e.target["password"].value,
+        }),
+      });
+      console.log(response);
+      if (response.status == 200) {
+        navigate("/department");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error while getting data! Please try again later.");
+      return <>{"ERROR! Please try later"}</>;
+    }
   };
   return (
-    <div className="flex flex-col mt-6 space-y-6">
+    <div className="flex flex-col mt-6 space-y-6 py-7">
       <form onSubmit={handleLogin}>
         <label className="text-gray-1000 text-[12px] font-normal md:text-[18px]">
           Department Name
         </label>
         <div className="flex items-end mb-5">
-          <img src={images.depEm} className="w-6 h-6 mr-2 mb-1" alt="Emblem" />
+          <img src={images.depEm} className="w-4 h-4 mr-2 mb-1" alt="Emblem" />
           <input
-            className="border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
+            className="mt-2 border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
             type="text"
             name="department-name"
           />
@@ -56,9 +97,9 @@ const DeptField = () => {
           Username
         </label>
         <div className="flex items-end mb-5">
-          <UserRound color="#5c5c5c" size={30} />
+          <UserRound color="#5c5c5c" size={20} />
           <input
-            className="border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
+            className="mt-2 border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
             type="text"
             name="username"
           />
@@ -67,9 +108,9 @@ const DeptField = () => {
           Password
         </label>
         <div className="flex items-end mb-5">
-          <Lock color="#5c5c5c" size={30} />
+          <Lock color="#5c5c5c" size={20} />
           <input
-            className="border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
+            className="mt-2 border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
             type="password"
             name="password"
           />
@@ -89,22 +130,40 @@ const DeptField = () => {
 
 const AdminField = () => {
   const navigate = useNavigate();
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    const form = new FormData(e.target);
-    console.log("pressed");
-    navigate("/admin");
+    // const form = new FormData(e.target);
+    try {
+      const response = await fetch("http://localhost:5000/admin/login", {
+        // mode: "no-cors",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          username: e.target["username"].value,
+          password: e.target["password"].value,
+        }),
+      });
+
+      if (response.status == 200) {
+        navigate("/admin");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error while getting data! Please try again later.");
+      return <>{"ERROR! Please try later"}</>;
+    }
   };
   return (
-    <div className="mt-6">
+    <div className="mt-6 py-7">
       <form onSubmit={handleLogin}>
         <label className="text-gray-1000 text-[12px] font-normal md:text-[18px]">
           Username
         </label>
         <div className="flex items-end mb-5">
-          <UserRound color="#5c5c5c" size={30} />
+          <UserRound color="#5c5c5c" size={20} />
           <input
-            className="border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
+            className="mt-2 border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
             type="text"
             name="username"
           />
@@ -113,9 +172,9 @@ const AdminField = () => {
           Password
         </label>
         <div className="flex items-end mb-2">
-          <Lock color="#5c5c5c" size={30} />
+          <Lock color="#5c5c5c" size={20} />
           <input
-            className="border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
+            className="mt-2 border-b-2 border-gray-300 focus:border-blue-500 px-4 focus:outline-none hover:border-blue-500 w-full"
             type="password"
             name="password"
           />
@@ -157,9 +216,9 @@ const Login = () => {
                   <Button
                     className={`${
                       student
-                        ? "text-[#538ff8] bg-[#538ff81f] hover:bg-[#538ff81f]"
-                        : "bg-[#f9f9f9] text-[#3d3d3d] hover:text-[#538ff8] hover:bg-[#538ff81f]"
-                    }  w-full md:w-auto mb-2 md:mb-0 flex-1 shrink text-[12px] md:text-[18px] font-light mr-2 md:mr-4`}
+                        ? "text-blue-700 bg-[#538ff81f] hover:bg-[#538ff81f] border-[1px] border-[#538ff8]"
+                        : "bg-[#f9f9f9] text-[#3d3d3d] hover:text-[#538ff8] hover:bg-[#538ff81f] border-1"
+                    }  w-full md:w-auto mb-2 md:mb-0 flex-1 shrink text-[12px] md:text-[14px] font-light mr-2 md:mr-4`}
                     onClick={() => {
                       setStudent(true);
                       setAdmin(false);
@@ -171,9 +230,9 @@ const Login = () => {
                   <Button
                     className={`${
                       dept
-                        ? "text-[#538ff8] bg-[#538ff81f] hover:bg-[#538ff81f]"
-                        : "bg-[#f9f9f9] text-[#3d3d3d] hover:text-[#538ff8] hover:bg-[#538ff81f]"
-                    }  w-full md:w-auto mb-2 md:mb-0 flex-1 shrink text-[12px] md:text-[18px] font-light mr-2 md:mr-4`}
+                        ? "text-blue-700 bg-[#538ff81f] hover:bg-[#538ff81f] border-[1px] border-[#538ff8]"
+                        : "bg-[#f9f9f9] text-[#3d3d3d] hover:text-[#538ff8] hover:bg-[#538ff81f] border-1"
+                    }  w-full md:w-auto mb-2 md:mb-0 flex-1 shrink text-[12px] md:text-[14px] font-light mr-2 md:mr-4`}
                     onClick={() => {
                       setStudent(false);
                       setAdmin(false);
@@ -185,9 +244,9 @@ const Login = () => {
                   <Button
                     className={`${
                       admin
-                        ? "text-[#538ff8] bg-[#538ff81f] hover:bg-[#538ff81f]"
+                        ? "text-blue-700 bg-[#538ff81f] hover:bg-[#538ff81f] border-[1px] border-[#538ff8]"
                         : "bg-[#f9f9f9] text-[#3d3d3d] hover:text-[#538ff8] hover:bg-[#538ff81f]"
-                    }  w-full md:w-auto mb-2 md:mb-0 flex-1 shrink text-[12px] md:text-[18px] font-light mr-2 md:mr-4`}
+                    }  w-full md:w-auto mb-2 md:mb-0 flex-1 shrink text-[12px] md:text-[14px] font-light mr-2 md:mr-4`}
                     onClick={() => {
                       setStudent(false);
                       setAdmin(true);
@@ -213,7 +272,7 @@ const Login = () => {
                 <img
                   className={`${
                     student ? "opacity-100" : "opacity-0"
-                  } absolute transition-opacity duration-1000 ease-in-out max-w-full max-h-full p-8`}
+                  } absolute transition-opacity duration-250 ease-in-out max-w-full max-h-full p-8`}
                   loading="lazy"
                   src={images.studentLogin}
                   alt="student"
@@ -221,7 +280,7 @@ const Login = () => {
                 <img
                   className={` ${
                     admin ? "opacity-100" : "opacity-0"
-                  } absolute transition-opacity duration-1000 ease-in-out max-w-full max-h-full p-8`}
+                  } absolute transition-opacity duration-250 ease-in-out max-w-full max-h-full p-8`}
                   src={images.adminLogin}
                   loading="lazy"
                   alt="admin"
@@ -229,7 +288,7 @@ const Login = () => {
                 <img
                   className={` ${
                     dept ? "opacity-100" : "opacity-0"
-                  } absolute transition-opacity duration-1000 ease-in-out max-w-full max-h-full p-8`}
+                  } absolute transition-opacity duration-250 ease-in-out max-w-full max-h-full p-8`}
                   src={images.deptLogin}
                   loading="lazy"
                   alt="department"
