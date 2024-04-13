@@ -14,6 +14,7 @@ import aboutIllustration from "../assets/aboutIllustration.svg";
 import Profile from "../assets/user-logo.svg";
 import DropBox from "../assets/Dropbox.svg";
 import MSLogo from "../assets/ms_logo.svg";
+import FineQR from "../assets/qr.png";
 
 export default {
   logo,
@@ -32,4 +33,5 @@ export default {
   Profile,
   DropBox,
   MSLogo,
+  FineQR
 };
